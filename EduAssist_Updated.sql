@@ -6,18 +6,11 @@ CREATE TABLE Role (
     RoleName NVARCHAR(50) NOT NULL UNIQUE -- Role name (Admin, Staff, Student)
 );
 
-
-select * from Feedback
-
-Use EduAssistHelpdesk
-
 INSERT INTO Role (RoleName)
 VALUES 
 ('Admin'),
 ('Staff'),
 ('Student');
-
-select * from [User]
 
 CREATE TABLE [User] (
     UserID INT PRIMARY KEY IDENTITY(101,1), -- Auto-increment starting from 101
@@ -35,18 +28,6 @@ CREATE TABLE Department (
     DepartmentID INT PRIMARY KEY IDENTITY(101,1),
     DepartmentName NVARCHAR(100) NOT NULL UNIQUE
 );
-select * from Professor
-INSERT INTO Department (DepartmentName) VALUES
-('Academics'),
-('Finance'),
-('Training & Placement'),
-('Logistics'),
-('Other')
-
-INSERT INTO Department (DepartmentName) VALUES
-('Administrator')
-
-select * from Department
 
 CREATE TABLE StudentProfile (
     StudentProfileID INT PRIMARY KEY IDENTITY(101,1), -- Auto-increment starting from 101
@@ -64,6 +45,7 @@ CREATE TABLE StudentProfile (
     CONSTRAINT FK_StudentProfile_Course FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
 	CONSTRAINT Contact_Check CHECK(Contact like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 );
+
 alter table StudentProfile
 add ProfilePic varbinary(max)
 
@@ -93,16 +75,6 @@ CREATE TABLE Professor (
     CONSTRAINT Professor_ContactCheck CHECK (Contact LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]') 
 );
 
-INSERT INTO Professor (FirstName, LastName, Email, Contact, Expertise)
-VALUES
-('Amit', 'Sharma', 'amit.sharma@example.com', '9876543210', 'Machine Learning and AI'),
-('Priya', 'Verma', 'priya.verma@example.com', '9876543211', 'Data Science and Analytics'),
-('Ravi', 'Kumar', 'ravi.kumar@example.com', '9876543212', 'Cloud Computing'),
-('Neha', 'Singh', 'neha.singh@example.com', '9876543213', 'Software Engineering'),
-('Manish', 'Yadav', 'manish.yadav@example.com', '9876543214', 'Database Management');
-
-select * from Professor
-
 CREATE TABLE Course (
     CourseID INT PRIMARY KEY IDENTITY(101,1),
     CourseName NVARCHAR(100) NOT NULL,
@@ -113,29 +85,11 @@ CREATE TABLE Course (
     CONSTRAINT FK_Course_HOD FOREIGN KEY (HOD) REFERENCES Professor(ProfessorID)  
 );
 
-INSERT INTO Course (CourseName, Branch, HOD, Fee)
-VALUES
-('B.Tech', 'Computer Science', 101, 50000),  
-('B.Tech', 'Information Technology', 102, 48000),  
-('M.Tech', 'Software Engineering', 103, 60000),  
-('B.Tech', 'Electrical Engineering', 104, 45000),  
-('M.Tech', 'Data Science', 105, 65000);  
-
-
-select * from Subject
-
-select * from Course
-
 CREATE TABLE Subject (
     SubjectID INT PRIMARY KEY IDENTITY(101,1),
     SubjectName NVARCHAR(100) NOT NULL UNIQUE
 );
 
-insert into Subject values ('CAIT'),('DBMS'),('OOAD'),('Computer Network'),('DSA'),('DAA'),('BME')
-
-
-select * from Course
-select * from Subject order by SubjectID
 CREATE TABLE CourseSubject (
     ID INT PRIMARY KEY IDENTITY(101,1), -- Auto-increment
     CourseID INT NOT NULL,
@@ -162,11 +116,6 @@ CREATE TABLE ClassSchedule (
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-
-
-
-select * from ClassSchedule
-
 CREATE TABLE ExamSchedule (
     ExamID INT PRIMARY KEY IDENTITY(101,1), -- Auto-incremented primary key
     CourseID INT NOT NULL, -- The course for which the exam is scheduled
@@ -183,38 +132,6 @@ CREATE TABLE ExamSchedule (
     CONSTRAINT FK_ExamSchedule_Subject FOREIGN KEY (SubjectID) REFERENCES Subject(SubjectID)
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
--- Sample Exam Schedule 1
-INSERT INTO ExamSchedule (CourseID, SubjectID, ExamDate, StartTime, EndTime, Room)
-VALUES
-(103, 101, '2024-12-20', '09:00:00', '12:00:00', 'Room 101');  -- CourseID 1, SubjectID 101
-
--- Sample Exam Schedule 2
-INSERT INTO ExamSchedule (CourseID, SubjectID, ExamDate, StartTime, EndTime, Room)
-VALUES
-(103, 102, '2024-12-21', '10:00:00', '13:00:00', 'Room 102');  -- CourseID 2, SubjectID 102
-
--- Sample Exam Schedule 3
-INSERT INTO ExamSchedule (CourseID, SubjectID, ExamDate, StartTime, EndTime, Room)
-VALUES
-(103, 103, '2024-12-22', '11:00:00', '14:00:00', 'Room 203');  -- CourseID 1, SubjectID 103
-
--- Sample Exam Schedule 4
-INSERT INTO ExamSchedule (CourseID, SubjectID, ExamDate, StartTime, EndTime, Room)
-VALUES
-(103, 104, '2024-12-23', '08:30:00', '11:30:00', 'Room 304');  -- CourseID 3, SubjectID 104
-
--- Sample Exam Schedule 5
-INSERT INTO ExamSchedule (CourseID, SubjectID, ExamDate, StartTime, EndTime, Room)
-VALUES
-(103, 105, '2024-12-24', '14:00:00', '17:00:00', 'Room 405');  -- CourseID 2, SubjectID 105
-
--- Sample Exam Schedule 6
-INSERT INTO ExamSchedule (CourseID, SubjectID, ExamDate, StartTime, EndTime, Room)
-VALUES
-(103, 106, '2024-12-25', '12:00:00', '15:00:00', 'Room 506');  -- CourseID 4, SubjectID 106
-
-select * from Subject
-select * from Activities
 
 CREATE TABLE Activities (
     ActivityID INT PRIMARY KEY IDENTITY(101,1), -- Auto-incremented primary key
@@ -230,12 +147,6 @@ CREATE TABLE Activities (
     CONSTRAINT ActivityDuration CHECK (StartTime < EndTime), -- Ensure activity starts before it ends
     CONSTRAINT UniqueActivitySchedule UNIQUE (ActivityType, ActivityDate, StartTime, Location) -- Ensure no overlapping activities of the same type at the same location
 );
-use EduAssistHelpdesk
-select * from Activities
-
-
-select * from ClassSchedule
-select * from PlacementDrives
 
 CREATE TABLE PlacementDrives (
     DriveID INT PRIMARY KEY IDENTITY(101,1), -- Auto-incremented primary key
@@ -254,35 +165,6 @@ CREATE TABLE PlacementDrives (
     CONSTRAINT UniqueDrive UNIQUE (CompanyName, JobTitle, DriveDate, StartTime, Location) -- Ensure no duplicate drives
 );
 
---CREATE TABLE FeePaymentRecords (
---    PaymentID INT PRIMARY KEY IDENTITY(101,1), -- Auto-increment starting from 10000
---    StudentID INT NOT NULL, -- Reference to the Student
---    TotalFee FLOAT NOT NULL, -- Derived from Course table
---    PaidFee FLOAT NOT NULL DEFAULT 0.00, -- Total amount paid by the student
---    PendingFee AS (TotalFee - PaidFee) PERSISTED, -- Automatically calculated as the difference between TotalFee and PaidFee
---    LastPaymentDate DATETIME, -- Date of the last payment
---    Created DATETIME NOT NULL DEFAULT GETDATE(), -- Default to the current datetime
---    CONSTRAINT CHK_PaidFee CHECK (PaidFee >= 0), -- Paid fee must be non-negative
---    CONSTRAINT CHK_PendingFee CHECK (PendingFee >= 0), -- Pending fee must be non-negative
---    CONSTRAINT FK_FeePaymentRecords_Student FOREIGN KEY (StudentID) REFERENCES StudentProfile(StudentProfileID)
---	ON DELETE CASCADE ON UPDATE CASCADE
---);
-
---CREATE TRIGGER trg_SetTotalFee
---ON FeePaymentRecords
---AFTER INSERT
---AS
---BEGIN
---    -- Updating the TotalFee in FeePaymentRecords based on the Course TotalFee
---    UPDATE FeePaymentRecords
---    SET TotalFee = C.Fee
---    FROM FeePaymentRecords FPR
---    INNER JOIN Inserted I ON FPR.PaymentID = I.PaymentID
---    INNER JOIN StudentProfile SP ON I.StudentID = SP.StudentProfileID
---    INNER JOIN Course C ON SP.CourseID = C.CourseID;
---END;
-
-drop table FeePaymentRecords
 
 CREATE TABLE FeePaymentRecords (
     PaymentID INT PRIMARY KEY IDENTITY(101,1), -- Auto-increment starting from 10000
@@ -352,16 +234,6 @@ BEGIN
 
 END;
 
-
-
-select * from Course
-select * from StudentProfile
-
-INSERT INTO FeePaymentRecords (StudentID, PaidFee, PaymentYear)
-VALUES 
-(111, 10000.00, 2025)  -- StudentID 1, paid 20000 in 2024
-Select * from FeePaymentRecords
-
 CREATE TABLE Feedback (
     FeedbackID INT PRIMARY KEY IDENTITY(101,1), -- Auto-increment starting from 1000
     StudentID INT NOT NULL, -- Reference to the Student providing the feedback
@@ -372,14 +244,6 @@ CREATE TABLE Feedback (
     CONSTRAINT FK_Feedback_Student FOREIGN KEY (StudentID) REFERENCES StudentProfile(StudentProfileID)
 	ON DELETE CASCADE ON UPDATE CASCADE-- Foreign key for Student
 );
-
-INSERT INTO Feedback (StudentID, FeedbackText, Rating)
-VALUES 
-(111, N'Great course, really enjoyed the lessons and the instructor was helpful. Would highly recommend to others!', 5),
-(111, N'Good material, but some of the concepts were difficult to understand. It would be helpful if more examples were provided.', 3),
-(111, N'The course was okay, but the assignments felt too easy and did not challenge me enough. Could use more difficult tasks.', 2),
-(111, N'Excellent course! The content was engaging, and I learned a lot. Keep up the great work.', 5);
-
 
 CREATE TABLE Logistics (
     LogisticsID INT PRIMARY KEY IDENTITY(101,1), -- Auto-incremented primary key
@@ -403,11 +267,6 @@ CREATE TABLE Tickets (
     CONSTRAINT FK_Tickets_Department FOREIGN KEY (DepartmentID) REFERENCES Department(DepartmentID), 
     CONSTRAINT FK_Tickets_Staff FOREIGN KEY (AssignedToStaffID) REFERENCES StaffProfile(StaffProfileID)
 );
-
-select * from Department
-
-select * from Tickets
-select * from TicketLog
 
 CREATE TRIGGER trg_InsertTicketLog
 ON Tickets
@@ -448,7 +307,7 @@ CREATE TABLE TicketLog (
     CONSTRAINT FK_TicketLog_Staff FOREIGN KEY (UpdatedByStaffID) REFERENCES StaffProfile(StaffProfileID), 
     CONSTRAINT FK_TicketLog_AssignedStaff FOREIGN KEY (AssignedStaffID) REFERENCES StaffProfile(StaffProfileID) 
 );
-select * from [User]
+
 CREATE TRIGGER trg_UpdateTickets
 ON TicketLog
 AFTER INSERT
@@ -468,5 +327,3 @@ BEGIN
     INNER JOIN inserted ON Tickets.TicketID = inserted.TicketID; -- Match TicketID
 END;
 
-
-select * from Tickets
