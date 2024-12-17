@@ -1,0 +1,117 @@
+<div class="container">
+  <h2 class="text-center mb-4">Add Student</h2>
+
+  <!-- Display error message if any -->
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Form to add student -->
+  <form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)" class="form-horizontal">
+    <!-- User ID -->
+    <div class="mb-3">
+      <label for="userId" class="form-label">User ID</label>
+      <input type="number" id="userId" class="form-control" name="userId" [(ngModel)]="student.userId"
+        placeholder="Enter User ID" required #userId="ngModel" />
+      <div *ngIf="userId.invalid && userId.touched" class="text-danger">
+        User ID is required.
+      </div>
+    </div>
+
+
+    <!-- First Name -->
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="student.firstName"
+        placeholder="Enter first name" required #firstName="ngModel" />
+      <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+        First name is required.
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="student.lastName"
+        placeholder="Enter last name" required #lastName="ngModel" />
+      <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+        Last name is required.
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender</label>
+      <select id="gender" class="form-control" name="gender" [(ngModel)]="student.gender" required #gender="ngModel">
+        <option value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <div *ngIf="gender.invalid && gender.touched" class="text-danger">
+        Gender is required.
+      </div>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="mb-3">
+      <label for="dob" class="form-label">Date of Birth</label>
+      <input type="date" id="dob" class="form-control" name="dob" [(ngModel)]="student.dob" required #dob="ngModel" />
+      <div *ngIf="dob.invalid && dob.touched" class="text-danger">
+        Date of birth is required.
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="mb-3">
+      <label for="contact" class="form-label">Contact</label>
+      <input type="text" id="contact" class="form-control" name="contact" [(ngModel)]="student.contact"
+        placeholder="Enter contact number" required #contact="ngModel" />
+      <div *ngIf="contact.invalid && contact.touched" class="text-danger">
+        Contact is required.
+      </div>
+    </div>
+
+    <!-- Student Address -->
+    <div class="mb-3">
+      <label for="studentAddress" class="form-label">Student Address</label>
+      <textarea id="studentAddress" class="form-control" name="studentAddress" [(ngModel)]="student.studentAddress"
+        rows="3" placeholder="Enter student address" required #studentAddress="ngModel"></textarea>
+      <div *ngIf="studentAddress.invalid && studentAddress.touched" class="text-danger">
+        Address is required.
+      </div>
+    </div>
+
+    <!-- Course ID -->
+    <div class="mb-3">
+      <label for="courseId" class="form-label">Course ID</label>
+      <input type="number" id="courseId" class="form-control" name="courseId" [(ngModel)]="student.courseId"
+        placeholder="Enter course ID" required #courseId="ngModel" />
+      <div *ngIf="courseId.invalid && courseId.touched" class="text-danger">
+        Course ID is required.
+      </div>
+    </div>
+
+    <!-- Academic Year -->
+    <div class="mb-3">
+      <label for="academicYear" class="form-label">Academic Year</label>
+      <input type="number" id="academicYear" class="form-control" name="academicYear" [(ngModel)]="student.academicYear"
+        placeholder="Enter academic year" required #academicYear="ngModel" />
+      <div *ngIf="academicYear.invalid && academicYear.touched" class="text-danger">
+        Academic year is required.
+      </div>
+    </div>
+
+    <!-- Profile Picture -->
+    <div class="mb-3">
+      <label for="profilePic" class="form-label">Profile Picture</label>
+      <input type="file" id="profilePic" class="form-control" name="profilePic" (change)="onFileChange($event)"
+        required />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" [disabled]="!studentForm.valid">
+        Add Student
+      </button>
+    </div>
+  </form>
+</div>

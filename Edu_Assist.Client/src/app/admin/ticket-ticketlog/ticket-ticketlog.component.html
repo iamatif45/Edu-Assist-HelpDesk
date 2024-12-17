@@ -1,0 +1,84 @@
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Section: List of Tickets (Scrollable) -->
+        <div class="col-md-6 col-12">
+            <h3 class="mb-4">Tickets</h3>
+            
+            <div *ngIf="searchErrorMessage" class="alert alert-danger text-center">
+                {{ searchErrorMessage }}
+              </div>
+
+            <!-- Search Box for Ticket ID or Student ID -->
+            <div class="form-group mb-3">
+                <label for="search">Search by Ticket ID or Student ID</label>
+                <input type="text" class="form-control" id="search" [(ngModel)]="searchQuery" placeholder="Search..."
+                    (input)="filterTickets()" />
+            </div>
+
+            <div class="ticket-list-container">
+                <ul class="list-group">
+                    <li *ngFor="let ticket of filteredTickets"
+                        class="list-group-item d-flex justify-content-between align-items-start"
+                        (click)="selectTicket(ticket.TicketId)" style="cursor: pointer;">
+                        
+                        <!-- Ticket Details -->
+                        <div>
+                            <div><strong>Student ID: {{ ticket.StudentId }}&nbsp;||&nbsp;Ticket ID:{{ticket.TicketId}</strong></div>
+                            <div><strong>Title: {{ ticket.Title }}</strong></div>
+                            <div>Description: {{ ticket.Description }}</div>
+                            <div>Status: <span class="badge" [ngClass]="getStatusBadgeColor(ticket.CurrentStatus)">
+                                    {{ ticket.CurrentStatus }}</span></div>
+                            <div><small>Department: {{ ticket.DepartmentName }}</small></div>
+                            <div><small>Created: {{ ticket.Created | date: 'short' }}</small></div>
+                        </div>
+
+                        <!-- View Logs Button -->
+                        <button class="btn btn-info btn-sm">View Logs</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Ticket Log Form & Logs -->
+        <div class="col-md-6 col-12">
+            <div *ngIf="selectedTicketId !== null">
+                <h3 class="mb-4">Create New Log for Ticket ID: {{ selectedTicketId }}</h3>
+
+                <!-- New Log Form -->
+                <div *ngIf="commentErrorMessage" class="alert alert-danger text-center">
+                    {{ commentErrorMessage }}
+                  </div>
+
+                <form (ngSubmit)="createNewLog()">
+                    <div class="form-group">
+                        <label for="status" >Status</label>
+                        <select id="status" class="form-control"  [(ngModel)]="newLog.Status" name="status" required>
+                            <option value="Open">Open</option>
+                            <option value="In-progress">In-progress</option>
+                            <option value="Resolved">Resolved</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Comments</label>
+                        <textarea class="form-control" id="comments" rows="4" [(ngModel)]="newLog.Comments"
+                            name="comments" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3">Create Log</button>
+                </form>
+
+                <h4 class="mt-4">Logs for this Ticket:</h4>
+                <ul class="list-group">
+                    <li *ngFor="let log of ticketLogs" class="list-group-item">
+                        <strong>Status: <span class="badge" [ngClass]="getStatusBadgeColor(log.Status)">{{ log.Status }}</span></strong>
+                        <div>Comments: {{ log.Comments }}</div>
+                        <div>Updated on: {{ log.UpdatedDate | date: 'short' }}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

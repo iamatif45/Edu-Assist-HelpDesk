@@ -1,0 +1,30 @@
+<app-student-navbar></app-student-navbar>
+
+<div class="container mt-5">
+  <div *ngIf="course; else loading" class="card shadow-lg border-0">
+    <div class="card-body">
+      <h2 class="card-title text-primary font-weight-bold">{{ course.CourseName }} - {{ course.Branch }}</h2>
+      <h5 class="card-subtitle mb-2 text-muted">HOD: {{ course.HodNavigation.FirstName }} {{ course.HodNavigation.LastName }}</h5>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Course ID:</strong> {{ course.CourseId }}</li>
+        <li class="list-group-item"><strong>Branch:</strong> {{ course.Branch }}</li>
+        <li class="list-group-item"><strong>Fee:</strong> ₹{{ course.Fee }}</li>
+        <li class="list-group-item"><strong>Expertise:</strong> {{ course.HodNavigation.Expertise }}</li>
+        <li class="list-group-item"><strong>Contact:</strong> {{ course.HodNavigation.Contact }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ course.HodNavigation.Email }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="alert alert-info text-center mt-4">
+      <strong>Loading...</strong> Please wait while we fetch the course details.
+    </div>
+  </ng-template>
+
+  <ng-template #errorTemplate>
+    <div class="alert alert-danger text-center">
+      <strong>Error:</strong> {{ errorMessage }}
+    </div>
+  </ng-template>
+</div>

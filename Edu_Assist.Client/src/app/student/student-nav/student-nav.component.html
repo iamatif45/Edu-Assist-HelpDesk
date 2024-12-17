@@ -1,0 +1,57 @@
+<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+  <div class="container">
+    <!-- Logo or Name -->
+    <a  class="navbar-brand navbarcolor" routerLink="/student">Edu-Assist</a>
+
+    <!-- Toggler for mobile views -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <!-- Left aligned items -->
+        <li class="nav-item">
+          <a class="nav-link " style="color: white;" routerLink="/student" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link navbarcolor" routerLink="/student/profile" routerLinkActive="active">Profile</a>
+        </li>
+        <li class="nav-item  ">
+          <a class="nav-link navbarcolor" routerLink="/student/create-ticket" routerLinkActive="active">Raise Ticket</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link navbarcolor" routerLink="/student/ticket-ticketlog" routerLinkActive="active">Tickets & Log</a>
+        </li>
+
+        <!-- Dropdown menu for Others -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navbarcolor" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Others
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item navbarcolor" routerLink="/student/fee-record" routerLinkActive="active">Fee Details</a></li>
+            <li><a class="dropdown-item navbarcolor" routerLink="/student/activities" routerLinkActive="active">Activities</a></li>
+            <li><a class="dropdown-item navbarcolor" routerLink="/student/placementdrives" routerLinkActive="active">Placement
+                Drives</a></li>
+            <li><a class="dropdown-item navbarcolor" routerLink="/student/class-schedules" routerLinkActive="active">Class
+                Schedules</a></li>
+            <li><a class="dropdown-item navbarcolor" routerLink="/student/exam-schedules" routerLinkActive="active">Exam
+                Schedules</a></li>
+            <li><a class="dropdown-item navbarcolor" routerLink="/student/feedback" routerLinkActive="active">Feedback</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right aligned logout button -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

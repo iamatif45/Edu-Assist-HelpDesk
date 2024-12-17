@@ -1,0 +1,106 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container mt-5">
+  <h2 class="text-center text-primary mb-5">Activities List</h2>
+
+  <!-- Create New Activity Button -->
+  <div class="text-end mb-4">
+    <button class="btn btn-success" (click)="openModal()">Create New Activity</button>
+  </div>
+
+  <!-- Search Box -->
+  <div class="mb-4">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by Title, Type, or Organizer"
+      [(ngModel)]="searchQuery"
+      (input)="filterActivities()"
+    />
+  </div>
+
+  <!-- Success and Error Messages -->
+  <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> {{ errorMessage }}
+    <button type="button" class="btn-close" (click)="errorMessage = ''" aria-label="Close"></button>
+  </div>
+  <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> {{ successMessage }}
+    <button type="button" class="btn-close" (click)="successMessage = ''" aria-label="Close"></button>
+  </div>
+
+  <!-- Activity List -->
+  <div *ngIf="activities.length > 0; else noActivities">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let activity of activities">
+        <div class="card shadow-lg rounded">
+          <div class="card-body">
+            <h5 class="card-title">{{ activity.Title }}</h5>
+            <p class="card-text">{{ activity.Description }}</p>
+            <p><strong>Organizer:</strong> {{ activity.Organizer }}</p>
+            <p><strong>Activity Type:</strong> {{ activity.ActivityType }}</p>
+            <p><strong>Location:</strong> {{ activity.Location }}</p>
+            <p><strong>Date:</strong> {{ activity.ActivityDate }}</p>
+            <p><strong>Start Time:</strong> {{ activity.StartTime }}</p>
+            <p><strong>End Time:</strong> {{ activity.EndTime }}</p>
+            <button class="btn btn-warning" (click)="editActivity(activity.ActivityId)">Edit</button>
+            <button class="btn btn-danger" style="margin-left: 5%;" (click)="deleteActivity(activity.ActivityId)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Activities Available -->
+  <ng-template #noActivities>
+    <p class="text-center text-muted">No activities found matching your search query.</p>
+  </ng-template>
+
+  <!-- Create or Edit Activity Modal -->
+  <div *ngIf="modalOpen" class="modal fade show" tabindex="-1" style="display: block;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ selectedActivity ? 'Edit Activity' : 'Create Activity' }}</h5>
+          <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #activityForm="ngForm" (ngSubmit)="selectedActivity ? updateActivity() : createActivity()">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input id="title" name="title" class="form-control" [(ngModel)]="activity.Title" required />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea id="description" name="description" class="form-control" [(ngModel)]="activity.Description" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="organizer" class="form-label">Organizer</label>
+              <input id="organizer" name="organizer" class="form-control" [(ngModel)]="activity.Organizer" required />
+            </div>
+            <div class="mb-3">
+              <label for="activityType" class="form-label">Activity Type</label>
+              <input id="activityType" name="activityType" class="form-control" [(ngModel)]="activity.ActivityType" required />
+            </div>
+            <div class="mb-3">
+              <label for="activityDate" class="form-label">Activity Date</label>
+              <input type="date" id="activityDate" name="activityDate" class="form-control" [(ngModel)]="activity.ActivityDate" required />
+            </div>
+            <div class="mb-3">
+              <label for="activityStart" class="form-label">Start Time</label>
+              <input type="time" id="activityStart" name="activityStart" class="form-control" [(ngModel)]="activity.StartTime" required />
+            </div>
+            <div class="mb-3">
+              <label for="activityEnd" class="form-label">End Time</label>
+              <input type="time" id="activityEnd" name="activityEnd" class="form-control" [(ngModel)]="activity.EndTime" required />
+            </div>
+            <div class="mb-3">
+              <label for="location" class="form-label">Location</label>
+              <input id="location" name="location" class="form-control" [(ngModel)]="activity.Location" required />
+            </div>
+            <button type="submit" class="btn btn-primary">{{ selectedActivity ? 'Update' : 'Create' }}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

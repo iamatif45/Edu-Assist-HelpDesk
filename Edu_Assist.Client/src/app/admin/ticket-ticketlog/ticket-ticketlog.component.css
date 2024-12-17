@@ -1,0 +1,88 @@
+/* Custom Border Colors for Ticket Status */
+.border-danger {
+    border: 2px solid red !important;
+}
+
+.border-warning {
+    border: 2px solid yellow !important;
+}
+
+.border-success {
+    border: 2px solid green !important;
+}
+
+.border-primary {
+    border: 2px solid blue !important;
+}
+
+/* For status badges */
+.bg-danger {
+    background-color: red !important;
+    color: white;
+}
+
+.bg-warning {
+    background-color: yellow !important;
+    color: black;
+}
+
+.bg-success {
+    background-color: green !important;
+    color: white;
+}
+
+.bg-primary {
+    background-color: blue !important;
+    color: white;
+}
+
+
+/* Scrollable Ticket List */
+.ticket-list-container {
+    max-height: 500px; /* Set a max-height for the scrollable area */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Ensure that on smaller screens the layout is stacked */
+@media (max-width: 767px) {
+    .col-md-6 {
+        max-width: 100% !important;
+    }
+}
+/* Scrollable Ticket Log List */
+.ticket-log-list-container {
+    max-height: 400px; /* Set a max-height for the log list */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Styling for search input */
+#search {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Styling for ticket list items */
+.list-group-item {
+    cursor: pointer;
+}
+
+/* Ticket badge colors based on status */
+.bg-danger {
+    background-color: red !important;
+    color: white;
+}
+
+.bg-warning {
+    background-color: yellow !important;
+    color: black;
+}
+
+.bg-success {
+    background-color: green !important;
+    color: white;
+}
+
+.bg-primary {
+    background-color: blue !important;
+    color: white;
+}

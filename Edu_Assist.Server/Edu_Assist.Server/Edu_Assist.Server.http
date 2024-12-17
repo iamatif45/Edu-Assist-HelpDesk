@@ -1,0 +1,6 @@
+@Edu_Assist.Server_HostAddress = http://localhost:5119
+
+GET {{Edu_Assist.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

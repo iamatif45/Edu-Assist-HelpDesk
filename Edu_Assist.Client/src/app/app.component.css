@@ -1,0 +1,35 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color:darkcyan;
+  color: #333;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+h2, h3, h5 {
+  font-weight: 600;
+}
+
+/* Custom Spinner Styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+

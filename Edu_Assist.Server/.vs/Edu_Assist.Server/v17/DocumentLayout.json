@@ -1,0 +1,518 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\activityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\activityrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\examschedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\examschedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\classschedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\classschedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\examschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\examschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\dto\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\dto\\ticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\dto\\examscheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\dto\\examscheduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\staffscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\staffscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\staffrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\staffrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\istudentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\istudentrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\ticketlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\ticketlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\ticketrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\ticketrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\examschedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\examschedulerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\ticketlogrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\ticketlogrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\ticketlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\ticketlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\logisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\logisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\controllers\\feedbackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\controllers\\feedbackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\repo\\feedbackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\repo\\feedbackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|c:\\.net training\\project\\project\\edu_assist.server\\edu_assist.server\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E70648-4DEF-47A3-90A9-0173BA03E3CC}|Edu_Assist.Server\\Edu_Assist.Server.csproj|solutionrelative:edu_assist.server\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 315,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActivityRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\ActivityRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\ActivityRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\ActivityRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\ActivityRepo.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwA8AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T19:39:51.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Program.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Program.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Program.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Program.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADEAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:37:24.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActivitiesController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\ActivitiesController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\ActivitiesController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\ActivitiesController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\ActivitiesController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwCcAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:32:11.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Activity.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Activity.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\Activity.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Activity.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\Activity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:22:16.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T04:31:07.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClassSchedulesController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\ClassSchedulesController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\ClassSchedulesController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\ClassSchedulesController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\ClassSchedulesController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T04:30:58.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StaffsController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\StaffsController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\StaffsController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\StaffsController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\StaffsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T03:57:47.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\Department.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Department.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\Department.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:41:47.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ExamScheduleDTO.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\DTO\\ExamScheduleDTO.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\DTO\\ExamScheduleDTO.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\DTO\\ExamScheduleDTO.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\DTO\\ExamScheduleDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T11:16:46.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TicketDTO.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\DTO\\TicketDTO.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\DTO\\TicketDTO.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\DTO\\TicketDTO.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\DTO\\TicketDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:35:28.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExamSchedulesController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\ExamSchedulesController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\ExamSchedulesController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\ExamSchedulesController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\ExamSchedulesController.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAYwHcAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T10:56:32.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\Ticket.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Ticket.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\Ticket.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAIwCAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:00:19.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAzwDkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T17:59:01.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ExamSchedule.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\ExamSchedule.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\ExamSchedule.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\ExamSchedule.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\ExamSchedule.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T11:22:41.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TicketRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\TicketRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\TicketRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\TicketRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\TicketRepo.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwCoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:01:06.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\TicketsController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\TicketsController.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAYwIwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:02:36.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TicketLogRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\TicketLogRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\TicketLogRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\TicketLogRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\TicketLogRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:19:19.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TicketLogsController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\TicketLogsController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\TicketLogsController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\TicketLogsController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\TicketLogsController.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAA1wEAAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:21:36.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\UserRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\UserRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\UserRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\UserRepo.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAswEMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:23:30.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StaffRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\StaffRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\StaffRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\StaffRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\StaffRepo.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAACYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T03:59:09.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IStudentRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\IStudentRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\IStudentRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\IStudentRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\IStudentRepo.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA9wBUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T10:58:20.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TicketLog.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\TicketLog.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\TicketLog.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\TicketLog.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\TicketLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:24:49.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ExamScheduleRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\ExamScheduleRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\ExamScheduleRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\ExamScheduleRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\ExamScheduleRepo.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwB8AAAByAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T10:59:14.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LogisticsController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\LogisticsController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\LogisticsController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\LogisticsController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\LogisticsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T12:27:40.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FeedbacksController.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\FeedbacksController.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Controllers\\FeedbacksController.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Controllers\\FeedbacksController.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Controllers\\FeedbacksController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAwCUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T12:40:24.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Subject.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Subject.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\Subject.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Subject.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\Subject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T11:22:12.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "FeedbackRepo.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\FeedbackRepo.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Repo\\FeedbackRepo.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Repo\\FeedbackRepo.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Repo\\FeedbackRepo.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAQwCoAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T12:41:01.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Feedback.cs",
+              "RelativeDocumentMoniker": "Edu_Assist.Server\\Models\\Feedback.cs",
+              "ToolTip": "C:\\.Net Training\\Project\\Project\\Edu_Assist.Server\\Edu_Assist.Server\\Models\\Feedback.cs",
+              "RelativeToolTip": "Edu_Assist.Server\\Models\\Feedback.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T12:40:54.869Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 85,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
