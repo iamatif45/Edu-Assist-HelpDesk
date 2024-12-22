@@ -1,0 +1,55 @@
+<div class="container py-5">
+  <h2 class=" mb-4" style="color:darkred;">Student List</h2>
+
+  <!-- Search Input -->
+  <div class="mb-4">
+    <label for="search" class="form-label" >Search Students</label>
+    <input
+      type="text"
+      id="search"
+      class="form-control"
+      placeholder="Search by Name or ID"
+      [formControl]="searchControl"
+    />
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-4">
+    <i class="bi bi-exclamation-triangle"></i> {{ errorMessage }}
+  </div>
+
+  <!-- Success Message (if any) -->
+  <div *ngIf="successMessage" class="alert alert-success mt-4">
+    <i class="bi bi-check-circle"></i> {{ successMessage }}
+  </div>
+
+  <!-- Student Cards Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div
+      class="col"
+      *ngFor="let student of filteredStudents"
+      (mouseenter)="onCardHover(student.StudentProfileId)"
+      (mouseleave)="onCardLeave(student.StudentProfileId)"
+    >
+      <div class="card student-card shadow-lg" [ngClass]="{'expanded-card': hoveredCardId === student.StudentProfileId}">
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+            <img *ngIf="student.ProfilePic" [src]="'data:image/jpeg;base64,' + student.ProfilePic" alt="Profile Pic" class="card-img-top img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          <h5 class="card-title text-center mt-3">{{ student.FirstName }} {{ student.LastName }}</h5>
+          <p class="card-text"><strong>Gender:</strong> {{ student.Gender }}</p>
+          <p class="card-text"><strong>Student Id:</strong> {{ student.StudentProfileId }}</p>
+          <p class="card-text"><strong>DOB:</strong> {{ student.Dob | date:'shortDate' }}</p>
+          <p class="card-text"><strong>Contact:</strong> {{ student.Contact }}</p>
+          <p class="card-text"><strong>Course:</strong> {{ student.CourseId }}</p>
+          <p class="card-text"><strong>Academic Year:</strong> {{ student.AcademicYear }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Results Message -->
+  <div *ngIf="filteredStudents.length === 0 && !errorMessage" class="alert alert-info mt-4">
+    <i class="bi bi-info-circle"></i> No students found. Please enter a valid name or ID.
+  </div>
+</div>

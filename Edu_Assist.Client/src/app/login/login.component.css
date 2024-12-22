@@ -1,0 +1,60 @@
+/* Overall container to create flex layout */
+.container-fluid {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left Section: Video styling */
+.video-container {
+  width: 66.67%; /* 2/3 of the container */
+  position: relative;
+  height: 100%; /* Full height */
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7; /* Semi-transparent effect */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure video stays behind the content */
+}
+
+/* Right Section: Login form container */
+.login-form-container {
+  width: 33.33%; /* 1/3 of the container */
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* Ensure the form is above the video */
+  height: 100%; /* Full height */
+}
+
+/* Responsive Design: Stack the layout vertically on smaller screens */
+@media (max-width: 768px) {
+  .container-fluid {
+    flex-direction: column;
+  }
+
+  .video-container {
+    width: 100%;
+    height: 300px; /* Limit video height on small screens */
+  }
+
+  .login-form-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.video-content-overlay{
+  font-size: 1.2rem;
+  margin : 5px 0px;
+  text-align: center; 
+  font-weight: bold; /* Ensure paragraphs are bold */
+}

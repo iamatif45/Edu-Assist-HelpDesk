@@ -1,0 +1,62 @@
+/* Add a custom background color to the form */
+.container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the form labels and inputs */
+.form-label {
+  font-weight: 600;
+}
+
+input.form-control {
+  border-radius: 5px;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Style the buttons */
+.btn {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Styling the error message */
+.alert {
+  margin-top: 20px;
+}
+
+/* Table custom styling */
+.table {
+  margin-top: 30px;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+/* Button spacing */
+button + button {
+  margin-left: 10px;
+}

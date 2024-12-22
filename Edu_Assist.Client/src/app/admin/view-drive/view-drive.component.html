@@ -1,0 +1,125 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container mt-5">
+  <!-- Success/Error Messages -->
+  <div *ngIf="successMessage" class="alert alert-success text-center mb-4" [ngClass]="{'hide': hideMessages}">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger text-center mb-4" [ngClass]="{'hide': hideMessages}">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Placement Drives List -->
+  <div class="card shadow-lg p-4 rounded">
+    <div class="text-right mb-4">
+      <a routerLink="/admin/placement-drive" class="btn btn-outline-danger">Create Placement Drives</a>
+    </div>
+  
+    <h3 class="mb-4 text-center" style="color: darkred;">Placement Drives <i class="bi bi-mortarboard-fill"></i></h3>
+
+    <!-- Cards Display -->
+    <div class="row">
+      <div class="col-md-4" *ngFor="let drive of placementDrives">
+        <div class="card mb-4 shadow-sm rounded-lg">
+          <div class="card-body">
+            <h5 class="card-title text-dark">{{ drive.CompanyName }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ drive.JobTitle }}</h6>
+            <p class="card-text"><strong>Drive Date:</strong> {{ drive.DriveDate }}</p>
+            <p class="card-text"><strong>Eligibility Criteria</strong> {{ drive.EligibilityCriteria }}</p>
+            <p class="card-text"><strong>Location:</strong> {{ drive.Location }}</p>
+            <p class="card-text"><strong>Status:</strong> {{ drive.Status }}</p>
+            
+            <div class="d-flex justify-content-between">
+              <!-- Edit Button -->
+              <button class="btn btn-warning btn-sm rounded-pill shadow-sm" (click)="onEdit(drive.DriveId)" data-bs-toggle="modal" data-bs-target="#editDriveModal">Edit</button>
+              <!-- Delete Button -->
+              <button class="btn btn-danger btn-sm rounded-pill shadow-sm" (click)="deleteDrive(drive.DriveId)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal (only visible when a drive is selected for editing) -->
+    <div class="modal fade" id="editDriveModal" tabindex="-1" aria-labelledby="editDriveModalLabel" aria-hidden="true" *ngIf="selectedDrive">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editDriveModalLabel">Edit Placement Drive</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="updateDrive()" #placementDriveForm="ngForm">
+              <!-- Company Name -->
+              <div class="form-group mb-3">
+                <label for="CompanyName">Company Name</label>
+                <input id="CompanyName" [(ngModel)]="selectedDrive.CompanyName" name="CompanyName" 
+                  class="form-control rounded-pill" #companyName="ngModel" required minlength="4" 
+                  pattern="^[A-Za-z]+(?:[ .'-][A-Za-z]+)*$" (ngModelChange)="validateInput(companyName)">
+                <div *ngIf="companyName.invalid && companyName.touched" class="text-danger">
+                  Company Name should contain only alphabets and be at least 4 characters long, without repeated special characters or numbers.
+                </div>
+              </div>          
+
+              <!-- Job Title -->
+              <div class="form-group mb-3">
+                <label for="JobTitle">Job Title</label>
+                <input id="JobTitle" [(ngModel)]="selectedDrive.JobTitle" name="JobTitle" 
+                  class="form-control rounded-pill" #jobTitle="ngModel" required pattern="^[A-Za-z]+(?:[ .'-][A-Za-z]+)*$" 
+                  minlength="4" (ngModelChange)="validateInput(jobTitle)">
+                <div *ngIf="jobTitle.invalid && jobTitle.touched" class="text-danger">
+                  Job Title should contain only alphabets and be at least 4 characters long, without repeated special characters or numbers.
+                </div>
+              </div>
+          
+              <!-- Eligibility Criteria -->
+              <div class="form-group mb-3">
+                <label for="EligibilityCriteria">Eligibility Criteria</label>
+                <input id="EligibilityCriteria" [(ngModel)]="selectedDrive.EligibilityCriteria" 
+                  name="EligibilityCriteria" class="form-control rounded-pill" #eligibility="ngModel" 
+                  required minlength="4" pattern="^[A-Za-z]+(?:[ .'-][A-Za-z]+)*$" (ngModelChange)="validateInput(eligibility)">
+                <div *ngIf="eligibility.invalid && eligibility.touched" class="text-danger">
+                  Eligibility Criteria should contain only alphabets and be at least 4 characters long, without repeated special characters or numbers.
+                </div>
+              </div>
+
+              <!-- Drive Date -->
+              <div class="form-group mb-3">
+                <label for="DriveDate">Drive Date</label>
+                <input type="date" id="DriveDate" [(ngModel)]="selectedDrive.DriveDate" name="DriveDate" 
+                  class="form-control rounded-pill" #driveDate="ngModel" required />
+              </div>
+          
+              <!-- Location -->
+              <div class="form-group mb-3">
+                <label for="Location">Location</label>
+                <input id="Location" [(ngModel)]="selectedDrive.Location" name="Location" 
+                  class="form-control rounded-pill" #location="ngModel" required minlength="4" 
+                  pattern="^[A-Za-z]+(?:[ .'-][A-Za-z]+)*$" (ngModelChange)="validateInput(location)">
+                <div *ngIf="location.invalid && location.touched" class="text-danger">
+                  Location should contain only alphabets and be at least 4 characters long, without repeated special characters or numbers.
+                </div>
+              </div>
+          
+              <!-- Status -->
+              <div class="form-group mb-3">
+                <label for="Status">Status</label>
+                <select id="Status" [(ngModel)]="selectedDrive.Status" name="Status" 
+                  class="form-control rounded-pill" #status="ngModel" required>
+                  <option value="Scheduled">Scheduled</option>
+                  <option value="Ongoing">Ongoing</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary rounded-pill shadow-sm" [disabled]="placementDriveForm.invalid">Update Drive</button>
+                <button type="button" class="btn btn-secondary rounded-pill shadow-sm" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+/* feedback-list.component.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .list-group-item {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .list-group-item:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .list-group-item:nth-child(odd) {
+    background-color: #e9ecef;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #6c757d;
+  }
+  
+  /* Additional Styling to Enhance the Look */
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  .text-muted {
+    font-size: 0.9rem;
+  }
+  
+  .badge {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+  }
+  
+  .alert-danger {
+    margin-top: 20px;
+  }
+  
+  .alert-dismissible .btn-close {
+    background: #f00;
+  }
+  

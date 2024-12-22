@@ -1,0 +1,112 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Section: List of Tickets (Scrollable) -->
+        <div class="col-md-6 col-12">
+            <h3 class="mb-4 text-center ticket-title">
+                 Tickets <i class="bi bi-ticket-perforated-fill"></i>
+            </h3>
+
+            <div *ngIf="searchErrorMessage" class="alert alert-danger text-center">
+                {{ searchErrorMessage }}
+            </div>
+
+            <!-- Search Box for Ticket ID or Student ID -->
+            <div class="form-group mb-4">
+                <label for="search" class="text-muted">Search by Ticket ID or Student ID</label>
+                <input type="text" class="form-control search-input" id="search" [(ngModel)]="searchQuery" placeholder="Search..."
+                    (input)="filterTickets()" />
+            </div>
+
+            <div class="ticket-list-container">
+                <ul class="list-group">
+                    <li *ngFor="let ticket of filteredTickets"
+                        class="list-group-item ticket-item" (click)="selectTicket(ticket.TicketId)">
+                        <div>
+                            <div><strong>Student ID: {{ ticket.StudentId }} || Ticket ID:{{ ticket.TicketId }}</strong></div>
+                            <div><strong>Title: {{ ticket.Title }}</strong></div>
+                            <div>Description: {{ ticket.Description }}</div>
+                            <div>Status:
+                                <span class="badge" [ngClass]="getStatusBadgeColor(ticket.CurrentStatus)">
+                                    {{ ticket.CurrentStatus }}
+                                </span>
+                            </div>
+                            <div><small>Department: {{ ticket.DepartmentName }}</small></div>
+                            <div><small>Created: {{ ticket.Created | date: 'short' }}</small></div>
+                        </div>
+                        <button class="btn btn-info btn-sm rounded">View Logs</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Section: Ticket Log Form & Logs -->
+        <div class="col-md-6 col-12">
+            <div *ngIf="selectedTicketId !== null">
+                <h3 class="mb-4 text-center ticket-log-title">
+                    <i class="bi bi-ticket-perforated-fill"></i> Create New Log for Ticket ID: {{ selectedTicketId }}
+                </h3>
+
+                <div *ngIf="commentErrorMessage" class="alert alert-danger text-center">
+                    {{ commentErrorMessage }}
+                </div>
+
+                <!-- New Log Form -->
+                <form (ngSubmit)="createNewLog()" #logForm="ngForm">
+                    <div class="form-group">
+                        <label for="status" class="text-muted">Status</label>
+                        <select id="status" class="form-control rounded-pill" [(ngModel)]="newLog.Status" name="status" required>
+                            <option value="Open">Open</option>
+                            <option value="In-progress">In-progress</option>
+                            <option value="Resolved">Resolved</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments" class="text-muted">Comments</label>
+                        <textarea class="form-control comment-textarea" id="comments" rows="4" [(ngModel)]="newLog.Comments"
+                        pattern="^[A-Za-z0-9:., -]{5,}$"    name="comments" required (input)="logForm.form.controls['comments'].markAsTouched()">
+                        </textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark btn-submit" [disabled]="!logForm.form.controls['comments']?.valid || selectedTicketStatus === 'Closed'">
+                        Create Log
+                    </button>
+                </form>
+
+                <!-- Message when ticket is closed -->
+                <div *ngIf="selectedTicketStatus === 'Closed'" class="alert alert-warning mt-3 text-center">
+                    This ticket is closed, no new logs can be added.
+                </div>
+
+                <h4 class="mt-4 text-muted">Logs for this Ticket:</h4>
+
+                <!-- Logs Table -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Comments</th>
+                                <th>Updated On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let log of ticketLogs">
+                                <td>
+                                    <span class="badge" [ngClass]="getStatusBadgeColor(log.Status)">
+                                        {{ log.Status }}
+                                    </span>
+                                </td>
+                                <td>{{ log.Comments }}</td>
+                                <td>{{ log.UpdatedDate | date: 'short' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

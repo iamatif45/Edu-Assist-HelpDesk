@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: center;
+  }
+  
+  .spinner-border {
+    margin-top: 20px;
+  }
+  
+  @media print {
+    /* Hide the navbar when printing */
+    app-student-navbar {
+      display: none;
+    }
+  
+    /* Adjust the table styles for printing */
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .table th, .table td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    /* Remove extra padding from the container */
+    .container {
+      padding: 0;
+    }
+  
+    /* Optionally adjust font size for print */
+    body {
+      font-size: 12px;
+    }
+  }
+  

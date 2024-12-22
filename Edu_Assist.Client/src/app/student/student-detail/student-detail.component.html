@@ -1,0 +1,171 @@
+<div class="container mt-5">
+  <!-- Welcome Message Section -->
+  <div class="welcome-message text-center mb-4">
+    <h1 class="display-4 text-light futuristic-text">Welcome to Edu - Assist <i class="bi bi-person-raised-hand"></i></h1>
+    <p class="lead text-light">Empowering the leaders of tomorrow with advanced learning tools</p>
+  </div>
+
+  <!-- Student Details Section -->
+  <div *ngIf="student; else loading" class="card futuristic-card">
+    <div class="card-body">
+      <h2 class="card-title text-light futuristic-text">{{ student.FirstName }} {{ student.LastName }}</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <div class="profile-pic-container">
+            <img *ngIf="student.ProfilePic" [src]="'data:image/jpeg;base64,' + student.ProfilePic"
+              alt="Profile Picture" class="img-fluid profile-pic">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <ul class="list-group futuristic-list">
+            <li class="list-group-item futuristic-item"><strong>Gender:</strong> {{ student.Gender }}</li>
+            <li class="list-group-item futuristic-item"><strong>Date of Birth:</strong> {{ student.Dob | date }}</li>
+            <li class="list-group-item futuristic-item"><strong>Contact:</strong> {{ student.Contact }}</li>
+            <li class="list-group-item futuristic-item"><strong>Address:</strong> {{ student.StudentAddress }}</li>
+            <a [routerLink]="['/student/course-detail']" [queryParams]="{ courseId: student.CourseId }">
+              <li class="list-group-item futuristic-item">
+                <strong>Course ID:</strong> {{ student.CourseId }}
+              </li>
+            </a>
+            <li class="list-group-item futuristic-item"><strong>Academic Year:</strong> {{ student.AcademicYear }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Template -->
+  <ng-template #loading>
+    <div class="alert alert-info futuristic-alert">
+      <strong>Loading...</strong> Please wait while we fetch the student details.
+    </div>
+  </ng-template>
+</div>
+
+<!-- Style for Futuristic and College-like Design -->
+<style>
+  /* General Container Styling */
+  .container {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(to right, #003366, #2a5298);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Welcome Section */
+  .welcome-message {
+    background: linear-gradient(135deg, #003366, #006699);
+    padding: 50px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+  }
+
+  .futuristic-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+  }
+
+  /* Card Styling */
+  .futuristic-card {
+    background: #222;
+    color: #f2f2f2;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .futuristic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Profile Picture Styling */
+  .profile-pic-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .profile-pic {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+
+  .profile-pic:hover {
+    transform: scale(1.1);
+  }
+
+  /* List Styling */
+  .futuristic-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .futuristic-item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    color: #ddd;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+  }
+
+  .futuristic-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+  }
+
+  /* Loading Alert */
+  .futuristic-alert {
+    background: #333;
+    border: 2px solid #fff;
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .futuristic-alert strong {
+    color: #00bcd4; /* Cyan for emphasis */
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 767px) {
+    .futuristic-text {
+      font-size: 1.8rem;
+    }
+
+    .profile-pic {
+      max-width: 150px;
+    }
+
+    .card-body {
+      padding: 10px;
+    }
+
+    .welcome-message {
+      padding: 30px 15px;
+    }
+  }
+</style>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">

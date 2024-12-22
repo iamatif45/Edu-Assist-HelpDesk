@@ -1,0 +1,136 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container mt-5">
+  <h2 class="text-center">User Management <i class="bi bi-kanban-fill"></i></h2>
+
+  <!-- Success and Error Messages -->
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Button to Create New User -->
+  <button class="btn btn-primary mb-3" (click)="resetForm()">Create New User</button>
+
+  <!-- User List Table -->
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.UserId }}</td>
+          <td>{{ user.Username }}</td>
+          <td>{{ user.Email }}</td>
+          <td>{{ user.RoleId === 1 ? 'Admin' : 'Student' }}</td>
+          <td>{{ user.IsActive ? 'Active' : 'Inactive' }}</td>
+          <td>
+            <!-- Delete User Button -->
+            <button class="btn btn-danger" (click)="deleteUser(user.Username)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- User Form (for Create only, Edit is hidden) -->
+  <div *ngIf="!isEditing" class="card mt-4 shadow-lg">
+    <div class="card-header">
+      <h4 class="text-center text-primary">Create User</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="createUser()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" id="username" name="username" [(ngModel)]="newUser.Username" required minlength="8"
+            class="form-control shadow-sm" #username="ngModel" (ngModelChange)="onUsernameChange()">
+          <div *ngIf="username.invalid && username.touched" class="text-danger">
+            Username must be at least 8 characters long.
+          </div>
+          <div *ngIf="usernameChecked && usernameTaken" class="text-danger">
+            This username is already taken. Please choose another one.
+          </div>
+          <div *ngIf="usernameChecked && !usernameTaken" class="text-success">
+            This username is available!
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password" #password="ngModel"
+              [(ngModel)]="newUser.PasswordHash" [type]="isOldPasswordVisible ? 'text' : 'password'"
+              name="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$" 
+              required minlength="8" 
+              placeholder="Enter Password"
+            />
+            <div>
+              <button type="button" (click)="togglePasswordVisibility('old')" class="btn btn-sm btn-link futuristic-btn">Show/Hide<i class="bi bi-eye-fill"></i></button>
+            </div>
+            <div *ngIf="password.invalid && password.touched" class="text-danger">
+              Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter,
+              one number, and one special character.
+            </div>
+            
+          </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            [(ngModel)]="newUser.Email"
+            name="Email"
+            required #email="ngModel"
+            placeholder="Enter email"
+          />
+          <div *ngIf="email.invalid && email.touched" class="text-danger">
+            Please enter a valid email address.
+          </div>
+  
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select
+            class="form-control"
+            id="role"
+            [(ngModel)]="newUser.RoleId"
+            name="RoleId"
+            required
+          >
+            <option value="1">Admin</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select
+            class="form-control"
+            id="status"
+            [(ngModel)]="newUser.IsActive"
+            name="IsActive"
+            required
+          >
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+          </select>
+        </div>
+
+        <div class="text-left" style="margin-top: 1%;">
+          <button type="submit" class="btn btn-success mr-2">Create</button>
+          <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  

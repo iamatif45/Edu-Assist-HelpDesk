@@ -1,0 +1,70 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container mt-5">
+    <h2 class="text-center mb-5 " style="color: darkred; font-family:'Times New Roman', Times, serif;">Feedback List <i class="bi bi-chat-quote-fill"></i></h2>
+  
+    <!-- Search Box -->
+    <div class="mb-5">
+      <label for="searchQuery" class="form-label text-info fs-5">Search Feedback by Student ID or Rating</label>
+      <div class="input-group">
+        <input
+          type="text"
+          id="searchQuery"
+          class="form-control form-control-lg"
+          [(ngModel)]="searchQuery"
+          (input)="filterFeedbacks()"
+          placeholder="Enter Student ID or Rating (Numbers only)"
+          maxlength="10"
+        />
+        <button class="btn btn-info btn-lg" (click)="filterFeedbacks()">Search</button>
+      </div>
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="searchErrorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error!</strong> {{ searchErrorMessage }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  
+    <!-- Feedback List -->
+    <div *ngIf="filteredFeedbacks.length > 0; else noFeedbacks">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let feedback of filteredFeedbacks">
+          <div class="card shadow-lg rounded">
+            <div class="card-body">
+              <h5 class="card-title text-primary">
+                <strong>Student ID: </strong>{{ feedback.StudentId }}
+              </h5>
+              <p class="card-text text-muted">
+                <strong>Feedback Text:</strong> {{ feedback.FeedbackText }}
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span>
+                  <strong>Rating:</strong>
+                  <span
+                    class="badge"
+                    [ngClass]="{
+                      'bg-success': feedback.Rating >= 4,
+                      'bg-warning': feedback.Rating < 4 && feedback.Rating >= 2,
+                      'bg-danger': feedback.Rating < 2
+                    }"
+                    style="font-size: 1.2rem; padding: 8px 15px;"
+                    >{{ feedback.Rating }}</span
+                  >
+                </span>
+                <small class="text-muted">{{ feedback.FeedbackDate | date: 'shortDate' }}</small>
+              </div>
+              <div class="mt-2 text-end">
+                <small class="text-muted">Created at: {{ feedback.Created | date: 'short' }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- No Feedbacks Available -->
+    <ng-template #noFeedbacks>
+      <p class="text-center text-muted">No feedbacks found matching your search query.</p>
+    </ng-template>
+  </div>
+  

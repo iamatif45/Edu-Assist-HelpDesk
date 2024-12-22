@@ -1,0 +1,187 @@
+/* CSS for fading out messages */
+.fade-message {
+    animation: fadeOut 3s ease-in-out forwards;
+  }
+  
+  /* Keyframes for fading out the message */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+/* General Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Success and Error Messages */
+.alert {
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.alert .bi {
+  margin-right: 10px;
+}
+
+.alert-dismissible .btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+/* Class Schedule Cards */
+.card-body {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input.form-control, select.form-control {
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+input.form-control:focus, select.form-control:focus {
+  border-color: #5cb85c;
+  box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+textarea.form-control:focus, input.form-control:focus {
+  border-color: #5cb85c;
+  box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row-cols-md-2 {
+    row-gap: 20px;
+  }
+
+  .row-cols-lg-3 {
+    row-gap: 15px;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+}

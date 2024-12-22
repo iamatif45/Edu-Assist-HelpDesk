@@ -1,0 +1,120 @@
+/* General Styling */
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #007bff;
+  font-weight: 700;
+}
+
+h5.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.card-text strong {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.alert {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alert-dismissible {
+  position: relative;
+  padding-right: 40px;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 4px;
+}
+
+.text-muted {
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+.text-center p {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.bi-activity {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .spinner-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 3px;
+  }
+}

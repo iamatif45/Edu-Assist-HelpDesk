@@ -1,0 +1,86 @@
+/* General Container Styling */
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f1f1f1;
+  border-radius: 15px;
+  padding: 30px;
+  color: #333;
+}
+
+/* Card Styling */
+.card.custom-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.card.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(45deg, #00bcd4, #1a73e8);
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-body p {
+  margin: 8px 0;
+}
+
+.card-footer {
+  background-color: #f0f0f0;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+.card-footer .badge {
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  border-radius: 15px;
+}
+
+/* Badge Styling */
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.4em;
+  border-top-color: #00bcd4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .col-md-4 {
+      max-width: 100%;
+  }
+}
+
+h3.text-dark {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}

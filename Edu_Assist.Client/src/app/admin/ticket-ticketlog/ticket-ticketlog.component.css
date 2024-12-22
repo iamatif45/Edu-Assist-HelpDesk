@@ -1,0 +1,118 @@
+/* Global Styles */
+body {
+    background: #f4f6f9;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+/* Modernized Titles */
+.ticket-title, .ticket-log-title {
+    color: #6c5ce7;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Ticket List Styles */
+.ticket-list-container {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.ticket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.ticket-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Input */
+.search-input {
+    border-radius: 25px;
+    padding-left: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #6c5ce7;
+}
+
+/* Log Form Styles */
+.comment-textarea {
+    border-radius: 12px;
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #6c5ce7;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit:disabled {
+    background-color: #ccc;
+}
+
+/* Status Badge Colors */
+.bg-danger { background-color: #e74c3c !important; }
+.bg-warning { background-color: #f39c12 !important; }
+.bg-success { background-color: #2ecc71 !important; }
+.bg-primary { background-color: #3498db !important; }
+
+.alert {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #6c5ce7;
+    color: #fff;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.success-message.hidden {
+    opacity: 0;
+}

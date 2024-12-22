@@ -1,0 +1,55 @@
+/* Add to your styles.css or component-specific CSS file */
+
+.student-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #0d0c11, #75a9c7); /* Futuristic gradient */
+    color: #fff;
+  }
+  
+  .student-card .card-body {
+    padding: 20px;
+  }
+  
+  .student-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .student-card .card-text {
+    font-size: 1.1rem;
+  }
+  
+  .student-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .student-card .card-img-top {
+    border-radius: 50%;
+  }
+  
+  .expanded-card {
+    transform: scale(1.1);  /* Slightly bigger card when hovered */
+  }
+  
+  .card-body p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+  
+  .card-body {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Ensure a responsive layout for different screen sizes */
+  @media (max-width: 768px) {
+    .student-card {
+      border-radius: 10px;
+    }
+    .card-body p {
+      font-size: 0.9rem;
+    }
+  }
+  

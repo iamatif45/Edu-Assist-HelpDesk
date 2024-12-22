@@ -1,0 +1,52 @@
+<div class="container-fluid d-flex vh-100">
+  <!-- Left Section with Video -->
+  <div class="video-container">
+    <video autoplay muted loop class="background-video">
+      <source src="assets/Videos/BCvideo2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-content-overlay">
+      <h1>Welcome to Edu-Assist</h1>
+     
+    </div>
+  </div>
+
+  <!-- Right Section with Login Form -->
+  <div class="login-form-container">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="bg-light p-5 shadow-lg rounded">
+      <h2 class="text-center text-primary mb-4">Edu-Assist Login</h2>
+
+      <!-- Invalid Login Alert -->
+      <div *ngIf="invalidLogin" class="alert alert-danger text-center mb-3">
+        Invalid username or password.
+      </div>
+
+      <!-- Username Field -->
+      <div class="mb-3">
+        <label for="username" class="form-label text-secondary">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.Username" class="form-control form-control-lg" placeholder="Enter your username" required>
+      </div>
+
+      <!-- Password Field -->
+      <div class="mb-3">
+        <label for="password" class="form-label text-secondary">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.Password" class="form-control form-control-lg" placeholder="Enter your password" required>
+      </div>
+
+      <!-- Role Dropdown -->
+      <div class="mb-3">
+        <label for="role" class="form-label text-secondary">Role</label>
+        <select id="role" name="role" [(ngModel)]="credentials.Role" class="form-control form-control-lg" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="Admin">Admin</option>
+          <option value="Student">Student</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button class="btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Log in</button>
+      </div>
+    </form>
+  </div>
+</div>

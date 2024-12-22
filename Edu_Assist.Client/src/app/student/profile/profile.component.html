@@ -1,0 +1,168 @@
+<app-student-navbar></app-student-navbar>
+
+<div *ngIf="studentProfile && user" class="container mt-5">
+  <h1 class="text-center mb-4">Student Profile <i class="bi bi-person-circle"></i></h1>
+
+  <!-- User Information -->
+  <div class="card p-4 mb-4">
+    <h3>User Information</h3>
+    <div class="row">
+      <div class="col-md-8">
+        <div><strong>Username:</strong> {{ user.username }}</div>
+        <div><strong>Email:</strong> {{ user.email }}</div>
+      </div>
+
+      <!-- Profile Picture and Update Password Link on the Right of User Information -->
+      <div class="col-md-4 text-center">
+        <div class="my-3">
+          <img *ngIf="user.profilePic" [src]="'data:image/jpeg;base64,' + user.profilePic" alt="Profile Picture" class="img-thumbnail" width="100" height="100">
+        </div>
+        <!-- Update Password Link -->
+        <a routerLink="/student/profile/update-password" class="btn btn-warning mt-3">Update Password</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Details -->
+  <div class="card p-4">
+    <h3>Student Details</h3>
+
+    <!-- Editable Form Section -->
+    <form *ngIf="isEditable" (ngSubmit)="onSubmit()" #studentForm="ngForm">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- First Name -->
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input 
+              id="firstName" 
+              [(ngModel)]="studentProfile.FirstName" 
+              name="firstName" 
+              class="form-control" 
+              required 
+              minlength="2" 
+              pattern="^[a-zA-Z]+$"
+              #firstName="ngModel">
+            <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)" class="text-danger">
+              {{ firstNameError || 'First Name must be at least 2 characters long and contain only letters.' }}
+            </div>
+          </div>
+
+          <!-- Last Name -->
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input 
+              id="lastName" 
+              [(ngModel)]="studentProfile.LastName" 
+              name="lastName" 
+              class="form-control" 
+              required 
+              minlength="4"
+              pattern="^[a-zA-Z]+$"
+              #lastName="ngModel">
+            <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)" class="text-danger">
+              {{ lastNameError || 'Last Name must be at least 4 characters long and contain only letters.' }}
+            </div>
+          </div>
+
+          <!-- Gender Dropdown -->
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" [(ngModel)]="studentProfile.Gender" name="gender" class="form-control" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input 
+              id="dob" 
+              [(ngModel)]="studentProfile.Dob" 
+              name="dob" 
+              type="date" 
+              class="form-control" 
+              required>
+          </div>
+
+          <!-- Contact -->
+          <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input 
+              id="contact" 
+              [(ngModel)]="studentProfile.Contact" 
+              name="contact" 
+              class="form-control" 
+              required 
+              pattern="^[1-9]{1}[0-9]{9}$" 
+              maxlength="10" 
+              minlength="10" 
+              #contact="ngModel">
+            <div *ngIf="contact.invalid && (contact.touched || contact.dirty)" class="text-danger">
+              {{ contactError || 'Contact number must be 10 digits and should not start with 0.' }}
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="form-group">
+            <label for="studentAddress">Address:</label>
+            <textarea 
+              id="studentAddress" 
+              [(ngModel)]="studentProfile.StudentAddress" 
+              name="studentAddress" 
+              class="form-control" 
+              rows="4" 
+              required
+              #studentAddress="ngModel"></textarea>
+            <div *ngIf="studentAddress.invalid && (studentAddress.touched || studentAddress.dirty)" class="text-danger">
+              {{ addressError || 'Address must contain at least 3 words and cannot contain special characters or repeated letters.' }}
+            </div>
+          </div>
+
+          <!-- Profile Picture -->
+          <div class="form-group">
+            <label for="profilePic">Profile Picture:</label>
+            <input type="file" class="form-control-file" (change)="onProfilePicChange($event)">
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Save Changes</button>
+            <button type="button" class="btn btn-secondary ml-2" (click)="cancelEdit()">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Profile Picture on the Right -->
+        <div class="col-md-4 text-center">
+          <div class="my-3">
+            <img *ngIf="studentProfile.ProfilePic" [src]="'data:image/jpeg;base64,' + studentProfile.ProfilePic" alt="Profile Picture" class="img-thumbnail" width="150" height="150">
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- View Mode Section -->
+    <div *ngIf="!isEditable">
+      <div class="row">
+        <div class="col-md-8">
+          <div><strong>First Name:</strong> {{ studentProfile.FirstName }}</div>
+          <div><strong>Last Name:</strong> {{ studentProfile.LastName }}</div>
+          <div><strong>Gender:</strong> {{ studentProfile.Gender }}</div>
+          <div><strong>Date of Birth:</strong> {{ studentProfile.Dob | date }}</div>
+          <div><strong>Contact:</strong> {{ studentProfile.Contact }}</div>
+          <div><strong>Address:</strong> {{ studentProfile.StudentAddress }}</div>
+        </div>
+
+        <!-- Profile Picture on the Right -->
+        <div class="col-md-4 text-center">
+          <div class="my-3">
+            <img *ngIf="studentProfile.ProfilePic" [src]="'data:image/jpeg;base64,' + studentProfile.ProfilePic" alt="Profile Picture" class="img-thumbnail" width="150" height="150">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-info" style="margin-top: 3%;" (click)="toggleEdit()">Edit Profile</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<app-student-navbar></app-student-navbar>
+
+<div class="container mt-5">
+  <h2 class="text-center text-primary font-weight-bold mb-4">Create a New Ticket</h2>
+  
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ errorMessage }}
+  </div>
+
+  <form #ticketForm="ngForm" (ngSubmit)="onSubmit(ticketForm)" class="ticket-form shadow-lg p-5 rounded bg-white">
+    <div class="form-group">
+      <label for="title" class="font-weight-bold">Title</label>
+      <input id="title" name="title" [(ngModel)]="ticket.Title" class="form-control" pattern="^[a-zA-Z ,.;0-9]+$" 
+    placeholder="Enter title" required minlength="5" 
+        [ngClass]="{'is-invalid': ticketForm.submitted && ticketForm.controls['title']?.invalid || ticketForm.controls['title']?.touched && ticketForm.controls['title']?.invalid}" />
+      <div *ngIf="ticketForm.controls['title']?.invalid && ticketForm.controls['title']?.touched" class="text-danger">
+      Title must be of 5 characters and it not allow special characters like # $ ^ & * 
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="font-weight-bold">Description</label>
+      <textarea 
+        id="description" 
+        name="description" 
+        [(ngModel)]="ticket.Description" 
+        class="form-control" 
+        placeholder="Enter description" 
+        required
+        [ngClass]="{'is-invalid': ticketForm.submitted && ticketForm.controls['description']?.invalid || ticketForm.controls['description']?.touched || ticketForm.controls['description']?.dirty}">
+      </textarea>
+      <div *ngIf="ticketForm.controls['description']?.invalid && (ticketForm.controls['description']?.touched || ticketForm.controls['description']?.dirty)" class="text-danger">
+        Description is must be atleast 5 words and it will not allowed special characters like # !$ % ^ &*
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="departmentId" class="font-weight-bold">Department</label>
+      <select id="departmentId" name="departmentId" [(ngModel)]="ticket.DepartmentId" class="form-control" required  pattern="^[a-zA-Z ,.;0-9]+$"
+        [ngClass]="{'is-invalid': ticketForm.submitted && ticketForm.controls['departmentId']?.invalid || ticketForm.controls['departmentId']?.touched && ticketForm.controls['departmentId']?.invalid}">
+        <option value="" disabled>Select a department</option>
+        <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+      </select>
+      <div *ngIf="ticketForm.controls['departmentId']?.invalid && ticketForm.controls['departmentId']?.touched" class="text-danger">
+        Department is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="currentStatus" class="font-weight-bold">Status</label>
+      <select id="currentStatus" name="currentStatus" [(ngModel)]="ticket.CurrentStatus" class="form-control">
+        <option value="Open">Open</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mt-4 shadow-lg">Create Ticket</button>
+  </form>
+</div>

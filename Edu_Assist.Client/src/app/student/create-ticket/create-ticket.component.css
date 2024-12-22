@@ -1,0 +1,120 @@
+/* General Container Styling */
+.container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f6fa;
+    border-radius: 10px;
+    padding: 30px;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2.text-primary {
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  /* Form Styling */
+  .ticket-form {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  /* Input Styling */
+  input.form-control, textarea.form-control, select.form-control {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+  
+  input.form-control:focus, textarea.form-control:focus, select.form-control:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+  }
+  
+  .is-invalid {
+    border-color: #dc3545;
+  }
+  
+  textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* Button Styling */
+  button.btn {
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #00bcd4;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  button.btn:hover {
+    background-color: #0288d1;
+    transform: translateY(-3px);
+  }
+  
+  button.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Success/Error Message Styling */
+  .alert {
+    font-size: 1rem;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .alert-dismissible {
+    margin-bottom: 1.5rem;
+  }
+  
+  .alert-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .alert-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .text-danger {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .ticket-form {
+      padding: 20px;
+    }
+  
+    h2.text-primary {
+      font-size: 1.6rem;
+    }
+  }
+  

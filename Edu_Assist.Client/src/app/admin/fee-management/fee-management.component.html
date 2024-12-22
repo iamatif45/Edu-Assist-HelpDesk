@@ -1,0 +1,201 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container mt-5">
+  <div class="row">
+    <!-- Left Section: List of Students -->
+    <div class="col-md-6 col-12">
+      <h3 class="mb-4 text-center student-header">
+        <i class="bi bi-person-fill"></i> Students
+      </h3>
+
+      <!-- Search Box -->
+      <div *ngIf="searchErrorMessage" class="alert alert-danger text-center">
+        {{ searchErrorMessage }}
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="search" class="text-muted">Search by Student ID or Name</label>
+        <input type="text" class="form-control search-input" id="search" [(ngModel)]="searchQuery"
+               placeholder="Search..." (input)="filterStudents()" />
+      </div>
+
+      <!-- Student List as Cards -->
+      <div class="student-list-container">
+        <div class="row">
+          <div class="col-md-4 col-12" *ngFor="let student of students">
+            <div class="student-card" (click)="selectStudent(student.StudentProfileId)">
+              <div class="student-card-body">
+                <h5 class="student-name">{{ student.FirstName }} {{ student.LastName }}</h5>
+                <p>Student ID: {{ student.StudentProfileId }}</p>
+                <p>Course ID: {{ student.CourseId }}</p>
+                <button class="btn btn-info btn-sm student-btn">View Fee Records</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section: Fee Record Form & Records -->
+    <div class="col-md-6 col-12" *ngIf="selectedStudentId !== null">
+      <h3 class="mb-4 text-center fee-header">
+        <i class="bi bi-cash-stack"></i> Create New Fee Record for Student ID: {{ selectedStudentId }}
+      </h3>
+
+      <!-- Error Message for Fee Record -->
+      <div *ngIf="feeErrorMessage" class="alert alert-danger text-center">
+        {{ feeErrorMessage }}
+      </div>
+
+      <form (ngSubmit)="createFeeRecord()">
+        <div class="form-group">
+          <label for="paymentYear" class="text-muted">Payment Year</label>
+          <input type="number" class="form-control fee-input" id="paymentYear" [(ngModel)]="newFeeRecord.PaymentYear"
+                 name="paymentYear" required />
+        </div>
+
+        <div class="form-group">
+          <input type="number" class="form-control" id="totalFee" [(ngModel)]="newFeeRecord.TotalFee"
+                 name="totalFee" hidden />
+        </div>
+
+        <div class="form-group">
+          <label for="paidFee" class="text-muted">Paid Fee</label>
+          <input type="number" class="form-control fee-input" id="paidFee" [(ngModel)]="newFeeRecord.PaidFee"
+                 name="paidFee" required />
+        </div>
+
+        <div class="form-group">
+          <input type="number" class="form-control" id="pendingFee" [(ngModel)]="newFeeRecord.PendingFee"
+                 name="pendingFee" hidden />
+        </div>
+
+        <button type="submit" class="btn btn-primary fee-submit-btn">Create Fee Record</button>
+      </form>
+
+      <h4 class="mt-4 text-muted">Fee Records for this Student:</h4>
+
+      <!-- Fee Records as Table -->
+      <div class="fee-records-container">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Payment Year</th>
+              <th>Total Fee</th>
+              <th>Paid Fee</th>
+              <th>Pending Fee</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fee of feeRecords">
+              <td>{{ fee.PaymentYear }}</td>
+              <td>{{ fee.TotalFee }}</td>
+              <td>{{ fee.PaidFee }}</td>
+              <td>{{ fee.PendingFee }}</td>
+              <td>{{ fee.Created | date: 'short' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Embedded CSS -->
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+
+  .student-header, .fee-header {
+    color: #6c5ce7;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+
+  .search-input {
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Student List Cards */
+  .student-list-container {
+    margin-top: 30px;
+  }
+
+  .student-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+  }
+
+  .student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .student-card-body {
+    padding: 20px;
+  }
+
+  .student-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .student-btn {
+    background-color: #00b894;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .student-btn:hover {
+    background-color: #0984e3;
+  }
+
+  /* Fee Records Table */
+  .fee-records-container {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  table th {
+    background-color: #6c5ce7;
+    color: white;
+  }
+
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .fee-submit-btn {
+    background-color: #6c5ce7;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+
+  .fee-submit-btn:hover {
+    background-color: #5e2ca5;
+  }
+</style>

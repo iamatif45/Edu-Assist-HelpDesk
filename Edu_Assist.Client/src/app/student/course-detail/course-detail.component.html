@@ -1,0 +1,120 @@
+<app-student-navbar></app-student-navbar>
+
+<div class="container mt-5">
+  <div *ngIf="course; else loading" class="card shadow-lg border-0 futuristic-card">
+    <div class="card-body">
+      <h2 class="card-title text-light futuristic-text">{{ course.CourseName }} - {{ course.Branch }}</h2>
+      <h5 class="card-subtitle mb-2 futuristic-subtitle">HOD: {{ course.HodNavigation.FirstName }} {{ course.HodNavigation.LastName }}</h5>
+      <ul class="list-group futuristic-list-group">
+        <li class="list-group-item futuristic-list-item"><strong>Course ID:</strong> {{ course.CourseId }}</li>
+        <li class="list-group-item futuristic-list-item"><strong>Branch:</strong> {{ course.Branch }}</li>
+        <li class="list-group-item futuristic-list-item"><strong>Fee:</strong> ₹{{ course.Fee }}</li>
+        <li class="list-group-item futuristic-list-item"><strong>Expertise:</strong> {{ course.HodNavigation.Expertise }}</li>
+        <li class="list-group-item futuristic-list-item"><strong>Contact:</strong> {{ course.HodNavigation.Contact }}</li>
+        <li class="list-group-item futuristic-list-item"><strong>Email:</strong> {{ course.HodNavigation.Email }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Loading Template -->
+  <ng-template #loading>
+    <div class="alert alert-info text-center mt-4 futuristic-alert">
+      <strong>Loading...</strong> Please wait while we fetch the course details.
+    </div>
+  </ng-template>
+
+  <!-- Error Template -->
+  <ng-template #errorTemplate>
+    <div class="alert alert-danger text-center futuristic-alert">
+      <strong>Error:</strong> {{ errorMessage }}
+    </div>
+  </ng-template>
+</div>
+
+<!-- Style for Futuristic Design -->
+<style>
+  /* General Container Styling */
+  .container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #333);
+    border-radius: 15px;
+    padding: 20px;
+    color: #f2f2f2;
+  }
+
+  /* Card Styling */
+  .futuristic-card {
+    background: #222;
+    color: #f2f2f2;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .futuristic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Title and Subtitle Styling */
+  .futuristic-text {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+  }
+
+  .futuristic-text:hover {
+    color: #00bcd4; /* Cyan hover effect */
+    transform: scale(1.1);
+  }
+
+  .futuristic-subtitle {
+    color: #ddd;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* List Group Styling */
+  .futuristic-list-group {
+    margin-top: 20px;
+  }
+
+  .futuristic-list-item {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #ddd;
+    font-weight: 500;
+  }
+
+  .futuristic-list-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Alert Styling */
+  .futuristic-alert {
+    background: #333;
+    border: 2px solid #fff;
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  /* Loading & Error Alert Styling */
+  .alert-info {
+    background: #005a8d;
+    border: 2px solid #004c74;
+  }
+
+  .alert-danger {
+    background: #e53935;
+    border: 2px solid #c62828;
+  }
+</style>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">

@@ -1,0 +1,179 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container py-5">
+  <div class="card shadow-lg rounded-4 p-4">
+    
+    <!-- Heading Section with View Student Button -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="text-center  mb-0">Register <i class="bi bi-r-circle-fill"></i> New Student</h2>
+      <button type="button" routerLink="/admin" class="btn btn-outline-primary shadow-sm" style="font-weight: 600;">
+        View Student
+      </button>
+    </div>
+
+    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)">
+
+      <!-- Username Input -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="user.Username" required minlength="8"
+          class="form-control shadow-sm" #username="ngModel" (ngModelChange)="onUsernameChange()">
+        <div *ngIf="username.invalid && username.touched" class="text-danger">
+          Username must be at least 8 characters long.
+        </div>
+        <div *ngIf="usernameChecked && usernameTaken" class="text-danger">
+          This username is already taken. Please choose another one.
+        </div>
+        <div *ngIf="usernameChecked && !usernameTaken" class="text-success">
+          This username is available!
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="user.PasswordHash" required
+          minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$" [type]="isOldPasswordVisible ? 'text' : 'password'"
+          class="form-control shadow-sm" #password="ngModel">
+          <div>
+          <button type="button" (click)="togglePasswordVisibility('old')" class="btn btn-sm btn-link futuristic-btn">Show/Hide<i class="bi bi-eye-fill"></i></button>
+        </div>
+          <div *ngIf="password.invalid && password.touched" class="text-danger">
+          Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter,
+          one number, and one special character.
+        </div>
+
+      </div>
+
+      <!-- Email Input -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [(ngModel)]="user.Email"
+          name="email"
+          required
+          email
+          #email="ngModel"
+        />
+        <div *ngIf="email.invalid && email.touched" class="text-danger">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <!-- First Name Input -->
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="student.FirstName" required minlength="2" 
+          pattern="^[A-Za-z ]+$" class="form-control shadow-sm" #firstName="ngModel">
+        <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+          First Name must be at least 2 characters long and contain only alphabetical letters.
+        </div>
+      </div>
+
+      <!-- Last Name Input -->
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="student.LastName" required minlength="4" 
+          pattern="^[A-Za-z]+$" class="form-control shadow-sm" #lastName="ngModel">
+        <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+          Last Name must be at least 4 characters long and contain only alphabetical letters.
+        </div>
+      </div>
+
+      <!-- Gender Dropdown -->
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select id="gender" name="gender" [(ngModel)]="student.Gender" required class="form-select shadow-sm" #gender="ngModel">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <div *ngIf="gender.invalid && gender.touched" class="text-danger">
+          Please select a gender.
+        </div>
+      </div>
+
+      <!-- Date of Birth Input -->
+      <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="date" id="dob" name="dob" [(ngModel)]="student.Dob" required class="form-control shadow-sm" #dob="ngModel">
+        <div *ngIf="dob.invalid && dob.touched" class="text-danger">
+          Please select a valid date of birth.
+        </div>
+      </div>
+
+      <!-- Contact Input -->
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact</label>
+        <input type="text" id="contact" name="contact" [(ngModel)]="student.Contact" required  pattern="^[1-9]{1}[0-9]{9}$" 
+        maxlength="10"  minlength="10" 
+          class="form-control shadow-sm" #contact="ngModel">
+        <div *ngIf="contact.invalid && contact.touched" class="text-danger">
+          Contact must be a 10-digit number and should not start with 0.
+        </div>
+      </div>
+
+      <!-- Address Input -->
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" id="address" name="studentAddress" [(ngModel)]="student.StudentAddress" required minlength="5"
+          class="form-control shadow-sm"  pattern="^[A-Za-z0-9:., -]{5,}$"  #studentAddress="ngModel">
+        <div *ngIf="studentAddress.invalid && studentAddress.touched" class="text-danger">
+          Address must be at least 8 characters long and contain valid words.
+        </div>
+      </div>
+
+      <!-- Course Selection Dropdown -->
+      <div class="mb-3">
+        <label for="course" class="form-label">Course</label>
+        <select id="course" name="course" [(ngModel)]="student.CourseId" required class="form-select shadow-sm" #course="ngModel">
+          <option value="">Select Course</option>
+          <option *ngFor="let course of courses" [value]="course.CourseId">
+            {{ course.CourseName }} - {{ course.Branch }}
+          </option>
+        </select>
+        <div *ngIf="course.invalid && course.touched" class="text-danger">
+          Please select a course.
+        </div>
+      </div>
+
+      <!-- Academic Year Dropdown -->
+      <div class="mb-3">
+        <label for="academicyear" class="form-label">Academic Year</label>
+        <select id="academicyear" name="academicyear" [(ngModel)]="student.AcademicYear" required
+          class="form-select shadow-sm" #academicyear="ngModel">
+          <option value="">Select Academic Year</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div *ngIf="academicyear.invalid && academicyear.touched" class="text-danger">
+          Please select an academic year.
+        </div>
+      </div>
+
+      <!-- Profile Picture Input -->
+      <div class="mb-3">
+        <label for="profilePic" class="form-label">Profile Picture</label>
+        <input type="file" id="profilePic" (change)="onFileChange($event)" class="form-control shadow-sm">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100 py-2 shadow-sm" [disabled]="registerForm.invalid">Register</button>
+    </form>
+
+    <!-- Display success/error messages -->
+    <div *ngIf="successMessage" class="alert alert-success mt-4">
+      <i class="bi bi-check-circle"></i> {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-4">
+      <i class="bi bi-exclamation-triangle"></i> {{ errorMessage }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+/* Add to styles.css or global styles file */
+.container {
+  max-width: 800px;
+  margin-top: 50px;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5a5a5a;
+}
+
+button {
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 12px 20px;
+}
+
+input, select {
+  border-radius: 10px;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.text-danger {
+  font-size: 12px;
+}

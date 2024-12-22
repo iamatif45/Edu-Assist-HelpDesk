@@ -1,0 +1,132 @@
+/* General Container Styling */
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Message */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 4px;
+}
+
+.text-muted {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Error Message */
+.alert {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.alert-dismissible {
+  margin-bottom: 1.5rem;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alert-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+/* Table Section Styling */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.table {
+  font-size: 1rem;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.thead-light {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Print Button */
+button.btn-outline-primary {
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
+  transition: all 0.3s ease;
+}
+
+button.btn-outline-primary:hover {
+  background-color: #00bcd4;
+  color: white;
+  transform: translateY(-2px);
+}
+
+button.btn-outline-primary:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Empty State Message */
+.alert-info {
+  font-size: 1.2rem;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #e9ecef;
+  color: #6c757d;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .table th, .table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .alert-info, .alert-danger {
+    font-size: 1rem;
+  }
+}

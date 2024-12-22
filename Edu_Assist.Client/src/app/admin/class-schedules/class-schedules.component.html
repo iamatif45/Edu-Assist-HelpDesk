@@ -1,0 +1,140 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="container">
+  <h2 class="text-center my-4" style="font-family: 'Times New Roman', Times, serif; color: darkblue;">
+    Class Schedules <i class="bi bi-clock-history"></i>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button *ngIf="!showForm" class="btn btn-outline-primary rounded-pill shadow-sm text-right" (click)="toggleForm()">
+        <i class="bi bi-calendar-plus"></i> Create New Schedule
+      </button>
+    </div>
+  </h2>
+  
+
+  <!-- Success and Error Messages -->
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  <div *ngIf="searchErrorMessage" class="alert alert-warning">{{ searchErrorMessage }}</div>
+
+  <!-- Search Bar -->
+  <div class="mb-4">
+    <input
+      type="text"
+      class="form-control rounded-pill"
+      placeholder="Search schedules by ID, Subject or Course"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="filterClassSchedules()"
+    />
+  </div>
+
+  <!-- Class Schedule Cards -->
+  <div *ngIf="filteredClassSchedules.length > 0; else noSchedules">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      <div class="col mb-4" *ngFor="let schedule of filteredClassSchedules">
+        <div class="card shadow-lg rounded" style="background-color:rgba(22, 159, 232, 0.051)">
+          <div class="card-body">
+            <h5 class="card-title">{{ getSubjectById(schedule.SubjectId)?.SubjectName }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ getCourseById(schedule.CourseId)?.CourseName }} - {{ getCourseById(schedule.CourseId)?.Branch }}</h6>
+            <p><strong>Schedule ID:</strong> {{ schedule.ScheduleId }}</p>
+            <p><strong>Start Time:</strong> {{ schedule.StartTime }}</p>
+            <p><strong>End Time:</strong> {{ schedule.EndTime }}</p>
+            <p><strong>Day:</strong> {{ schedule.DayOfWeek }}</p>
+            <button class="btn btn-warning btn-sm" (click)="toggleForm(schedule)">Edit</button>
+            <button class="btn btn-danger btn-sm" style="margin-left: 1.5%;" (click)="deleteClassSchedule(schedule.ScheduleId)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Class Schedules Found -->
+  <ng-template #noSchedules>
+    <p class="text-center text-muted">No class schedules found matching your search query.</p>
+  </ng-template>
+
+  
+
+  <!-- Modal for Class Schedule Form (Edit or Create) -->
+  <div *ngIf="showForm" class="modal fade show" style="display: block; background-color: rgba(0,0,0,0.5);" id="classScheduleModal" tabindex="-1" aria-labelledby="classScheduleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-lg shadow-lg">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="classScheduleModalLabel">{{ selectedSchedule ? 'Edit Class Schedule' : 'Create Class Schedule' }}</h5>
+          <button type="button" class="btn-close" (click)="toggleForm()"></button>
+        </div>
+        <div class="modal-body">
+          <form #classScheduleForm="ngForm" (ngSubmit)="saveClassSchedule(classScheduleForm)" novalidate>
+            <div class="form-group mb-3">
+              <label for="subject">Subject</label>
+              <select id="subject" class="form-control" [(ngModel)]="newClassSchedule.SubjectId" name="SubjectId" required>
+                <option *ngFor="let subject of subjects" [value]="subject.SubjectId">{{ subject.SubjectName }}</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="course">Course</label>
+              <select id="course" class="form-control" [(ngModel)]="newClassSchedule.CourseId" name="CourseId" required>
+                <option *ngFor="let course of courses" [value]="course.CourseId">{{ course.CourseName }} - {{ course.Branch }}</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="startTime">Start Time</label>
+              <input type="text" id="startTime" class="form-control" [(ngModel)]="newClassSchedule.StartTime" name="StartTime" required
+                pattern="^([0-1]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])$" #startTime="ngModel" (ngModelChange)="validateStartTime(startTime)" />
+              <div *ngIf="startTime.invalid && startTime.touched" class="text-danger">
+                Please enter a valid time in the format HH:MM:SS.
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="endTime">End Time</label>
+              <input type="text" id="endTime" class="form-control" [(ngModel)]="newClassSchedule.EndTime" name="EndTime" required
+                pattern="^([0-1]?[0-9]|2[0-3]):([0-5]?[0-9]):([0-5]?[0-9])$" #endTime="ngModel" (ngModelChange)="validateEndTime(endTime)" />
+              <div *ngIf="endTime.invalid && endTime.touched" class="text-danger">
+                Please enter a valid time in the format HH:MM:SS.
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="dayOfWeek">Day of Week</label>
+              <select id="dayOfWeek" class="form-control" [(ngModel)]="newClassSchedule.DayOfWeek" name="DayOfWeek" required>
+                <option *ngFor="let day of daysOfWeek" [value]="day">{{ day }}</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-3" [disabled]="classScheduleForm.invalid">
+              <i class="bi bi-save"></i> Save Schedule
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-content {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  .modal-header {
+    border-radius: 15px 15px 0 0;
+    padding: 15px 25px;
+  }
+  .modal-body {
+    padding: 25px;
+  }
+  .modal-footer {
+    border-top: none;
+    padding: 15px;
+  }
+  .btn-close {
+    background-color: transparent;
+    border: none;
+  }
+  .btn-close:hover {
+    color: #fff;
+  }
+</style>

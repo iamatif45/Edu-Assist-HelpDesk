@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark futuristic-navbar">
+  <div class="container">
+    <!-- Logo or Name -->
+    <a class="navbar-brand futuristic-text" routerLink="/admin">
+      <i class="bi bi-person-raised-hand"></i> Edu-Assist
+    </a>
+
+    <!-- Toggler for mobile views -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link futuristic-nav-item" routerLink="/admin/add-student" routerLinkActive="active">Student Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link futuristic-nav-item" routerLink="/admin/ticket-ticketlog" routerLinkActive="active">Tickets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link futuristic-nav-item" routerLink="/admin/user-management" routerLinkActive="active">User Management</a>
+        </li>
+
+        <!-- Dropdown menu for Others -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle futuristic-nav-item" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Others
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item futuristic-nav-item" routerLink="/admin/activities" routerLinkActive="active">Activities</a></li>
+            <li><a class="dropdown-item futuristic-nav-item" routerLink="/admin/class-schedules" routerLinkActive="active">Class Schedules</a></li>
+            <li><a class="dropdown-item futuristic-nav-item" routerLink="/admin/exam-schedules" routerLinkActive="active">Exam Schedules</a></li>
+            <li><a class="dropdown-item futuristic-nav-item" routerLink="/admin/feedback-list" routerLinkActive="active">Feedback</a></li>
+            <li><a class="dropdown-item futuristic-nav-item" routerLink="/admin/fee-detail" routerLinkActive="active">Fee Details</a></li>
+            <li><a class="dropdown-item futuristic-nav-item" routerLink="/admin/view-drive" routerLinkActive="active">Placement Drives</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right aligned logout button -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-danger futuristic-btn" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Style for Futuristic Navbar -->
+<style>
+  /* General Navbar Styling */
+  .futuristic-navbar {
+    background: linear-gradient(45deg, #1c1c1c, #333);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Navbar Brand Styling */
+  .futuristic-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .futuristic-text:hover {
+    color: #00bcd4; /* Cyan hover effect */
+    transform: scale(1.1);
+  }
+
+  /* Navbar Links */
+  .futuristic-nav-item {
+    color: #f2f2f2 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .futuristic-nav-item:hover,
+  .navbar-nav .active > .futuristic-nav-item {
+    color: #00bcd4; /* Cyan color for active and hover */
+    text-decoration: underline;
+  }
+
+  /* Navbar Dropdown */
+  .navbar-nav .dropdown-menu {
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  }
+
+  .dropdown-item.futuristic-nav-item {
+    color: #f2f2f2;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-item.futuristic-nav-item:hover {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00bcd4;
+  }
+
+  /* Logout Button Styling */
+  .futuristic-btn {
+    background-color: #ff3d00;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .futuristic-btn:hover {
+    background-color: #ff5722;
+    transform: scale(1.05);
+  }
+
+  /* Toggler Icon Styling */
+  .navbar-toggler-icon {
+    background-color: #f2f2f2;
+  }
+</style>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">

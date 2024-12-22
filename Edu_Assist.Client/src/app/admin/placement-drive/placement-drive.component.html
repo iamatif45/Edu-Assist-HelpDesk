@@ -1,0 +1,198 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container mt-5">
+  <!-- Success/Error Messages -->
+  <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> {{ successMessage }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error!</strong> {{ errorMessage }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <h3 class="mb-4  text-center" style="color: darkred;">Placement Drive <i class="bi bi-mortarboard-fill"></i></h3>
+
+  <form #placementDriveForm="ngForm" (ngSubmit)="savePlacementDrive(placementDriveForm)">
+    <!-- Company Name -->
+    <div class="form-group">
+      <label for="CompanyName">Company Name</label>
+      <input
+        id="CompanyName"
+        name="CompanyName"
+        class="form-control"
+        placeholder="Enter company name"
+        [(ngModel)]="placementDrive.CompanyName"
+        #companyName="ngModel"
+        required
+        [ngClass]="{'is-invalid': companyName.invalid && companyName.touched}"
+        pattern="^[A-Za-z0-9:., -]{5,}$" />
+      <div *ngIf="companyName.invalid && companyName.touched" class="text-danger">
+        <div *ngIf="companyName.errors?.['required']">Company Name is required.</div>
+        <div *ngIf="companyName.errors?.['pattern']">Company Name should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>
+      </div>
+    </div>
+
+    <!-- Job Title -->
+    <div class="form-group">
+      <label for="JobTitle">Job Title</label>
+      <input
+        id="JobTitle"
+        name="JobTitle"
+        class="form-control"
+        placeholder="Enter job title"
+        [(ngModel)]="placementDrive.JobTitle"
+        #jobTitle="ngModel"
+        required
+        [ngClass]="{'is-invalid': jobTitle.invalid && jobTitle.touched}"
+        pattern="^[A-Za-z0-9:., -]{5,}$" />
+      <div *ngIf="jobTitle.invalid && jobTitle.touched" class="text-danger">
+        <div *ngIf="jobTitle.errors?.['required']">Job Title is required.</div>
+        <div *ngIf="jobTitle.errors?.['pattern']">Job Title should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>
+      </div>
+    </div>
+
+    <!-- Eligibility Criteria -->
+    <div class="form-group">
+      <label for="EligibilityCriteria">Eligibility Criteria</label>
+      <input
+        id="EligibilityCriteria"
+        name="EligibilityCriteria"
+        class="form-control"
+        placeholder="Enter eligibility criteria"
+        [(ngModel)]="placementDrive.EligibilityCriteria"
+        #eligibilityCriteria="ngModel"
+        required
+        [ngClass]="{'is-invalid': eligibilityCriteria.invalid && eligibilityCriteria.touched}"
+        pattern="^[A-Za-z0-9:., -]{5,}$" />
+      <div *ngIf="eligibilityCriteria.invalid && eligibilityCriteria.touched" class="text-danger">
+        <div *ngIf="eligibilityCriteria.errors?.['required']">Eligibility Criteria is required.</div>
+        <div *ngIf="eligibilityCriteria.errors?.['pattern']">Eligibility Criteria should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>
+      </div>
+    </div>
+
+    <!-- Drive Date -->
+    <div class="form-group">
+      <label for="DriveDate">Drive Date</label>
+      <input
+        id="DriveDate"
+        name="DriveDate"
+        type="date"
+        class="form-control"
+        [(ngModel)]="placementDrive.DriveDate"
+        #driveDate="ngModel"
+        required
+        [ngClass]="{'is-invalid': driveDate.invalid && driveDate.touched}" />
+      <div *ngIf="driveDate.invalid && driveDate.touched" class="text-danger">
+        <div *ngIf="driveDate.errors?.['required']">Drive Date is required.</div>
+      </div>
+    </div>
+
+    <!-- Start Time -->
+    <div class="form-group">
+      <label for="StartTime">Start Time (HH:MM:SS)</label>
+      <input
+        id="StartTime"
+        name="StartTime"
+        class="form-control"
+        type="text"
+        placeholder="Enter start time (HH:MM:SS)"
+        [(ngModel)]="placementDrive.StartTime"
+        #startTime="ngModel"
+        required
+        [ngClass]="{'is-invalid': startTime.invalid && startTime.touched}"
+        pattern="^[0-9]{2}:[0-9]{2}:[0-9]{2}$" />
+      <div *ngIf="startTime.invalid && startTime.touched" class="text-danger">
+        <div *ngIf="startTime.errors?.['required']">Start Time is required.</div>
+        <div *ngIf="startTime.errors?.['pattern']">Start Time must be in HH:MM:SS format with numbers only.</div>
+      </div>
+    </div>
+
+    <!-- End Time -->
+    <div class="form-group">
+      <label for="EndTime">End Time (HH:MM:SS)</label>
+      <input
+        id="EndTime"
+        name="EndTime"
+        class="form-control"
+        type="text"
+        placeholder="Enter end time (HH:MM:SS)"
+        [(ngModel)]="placementDrive.EndTime"
+        #endTime="ngModel"
+        required
+        [ngClass]="{'is-invalid': endTime.invalid && endTime.touched}"
+        pattern="^[0-9]{2}:[0-9]{2}:[0-9]{2}$" />
+      <div *ngIf="endTime.invalid && endTime.touched" class="text-danger">
+        <div *ngIf="endTime.errors?.['required']">End Time is required.</div>
+        <div *ngIf="endTime.errors?.['pattern']">End Time must be in HH:MM:SS format with numbers only.</div>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="form-group">
+      <label for="Location">Location</label>
+      <input
+        id="Location"
+        name="Location"
+        class="form-control"
+        placeholder="Enter location"
+        [(ngModel)]="placementDrive.Location"
+        #location="ngModel"
+        required
+        [ngClass]="{'is-invalid': location.invalid && location.touched}"
+        pattern="^[A-Za-z0-9:., -]{5,}$" />
+      <div *ngIf="location.invalid && location.touched" class="text-danger">
+        <div *ngIf="location.errors?.['required']">Location is required.</div>
+        <div *ngIf="location.errors?.['pattern']">Location should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>
+      </div>
+    </div>
+
+    <!-- Organized By -->
+    <div class="form-group">
+      <label for="OrganizedBy">Organized By</label>
+      <input
+        id="OrganizedBy"
+        name="OrganizedBy"
+        class="form-control"
+        placeholder="Enter organizer name"
+        [(ngModel)]="placementDrive.OrganizedBy"
+        #organizedBy="ngModel"
+        required
+        [ngClass]="{'is-invalid': organizedBy.invalid && organizedBy.touched}"
+        pattern="^[A-Za-z0-9:., -]{5,}$" />
+      <div *ngIf="organizedBy.invalid && organizedBy.touched" class="text-danger">
+        <div *ngIf="organizedBy.errors?.['required']">Organized By is required.</div>
+        <div *ngIf="organizedBy.errors?.['pattern']">Organized By should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label for="Status">Status</label>
+      <select
+        id="Status"
+        name="Status"
+        class="form-control"
+        [(ngModel)]="placementDrive.Status"
+        #status="ngModel"
+        required
+        [ngClass]="{'is-invalid': status.invalid && status.touched}">
+        <option value="" disabled selected>Select Status</option>
+        <option value="Scheduled">Scheduled</option>
+        <option value="Ongoing">Ongoing</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <div *ngIf="status.invalid && status.touched" class="text-danger">
+        <div *ngIf="status.errors?.['required']">Status is required.</div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-left">
+      <button type="submit" class="btn btn-outline-info" style="margin-top: 1%;" [disabled]="placementDriveForm.invalid">Create Placement Drive</button>
+    </div>
+  </form>
+</div>

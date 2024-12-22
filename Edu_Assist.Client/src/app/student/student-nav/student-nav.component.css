@@ -1,0 +1,41 @@
+
+/* Optional: Customize navbar color */
+.navbarcolor {
+  color: white !important;
+}
+
+/* Text Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Optional: Customize the navbar to be more visible over the background */
+.navbar {
+  z-index: 3; /* Ensure navbar sits above the overlay */
+  position: relative;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 767px) {
+  .content h1 {
+    font-size: 3rem; /* Adjust the heading size for smaller screens */
+  }
+
+  .content p {
+    font-size: 1.2rem; /* Adjust paragraph size for smaller screens */
+  }
+}
