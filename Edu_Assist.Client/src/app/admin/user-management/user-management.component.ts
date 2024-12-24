@@ -17,12 +17,12 @@ export class UserManagementComponent implements OnInit {
     Username: '',
     PasswordHash: '',
     Email: '',
-    RoleId: 1,  // Set default to Admin
+    RoleId: 1,
     IsActive: true,
   };
-usernameTaken: boolean = false;  // Flag to indicate if username is taken
-  usernameChecked: boolean = false;  // Flag to indicate if username check is completed
-
+  usernameTaken: boolean = false;  
+  usernameChecked: boolean = false;  
+  isCreatingUser: boolean = false;  // Flag for form visibility
 
   constructor(private userService: UserService) {}
 
@@ -54,9 +54,6 @@ usernameTaken: boolean = false;  // Flag to indicate if username is taken
       this.isConfirmPasswordVisible = !this.isConfirmPasswordVisible;
     }
   }
-
-  
-
   onUsernameChange() {
     if (this.newUser.Username.length >= 8) {
       this.userService.checkUsernameAvailability(this.newUser.Username).subscribe({
@@ -109,7 +106,7 @@ usernameTaken: boolean = false;  // Flag to indicate if username is taken
   }
 
   deleteUser(username: string): void {
-    if (confirm('Are you sure you want to delete this user?')) {
+    
       this.userService.deleteUser(username).subscribe(
         () => {
           this.successMessage = 'User deleted successfully!';
@@ -118,8 +115,7 @@ usernameTaken: boolean = false;  // Flag to indicate if username is taken
         (error) => {
           this.errorMessage = error;
         }
-      );
-    }
+      );    
   }
 
   resetForm(): void {
@@ -133,5 +129,10 @@ usernameTaken: boolean = false;  // Flag to indicate if username is taken
     };
     this.selectedUser = null;
     this.isEditing = false;
+    this.isCreatingUser = false;  // Hide form after reset
+  }
+
+  toggleCreateUserForm(): void {
+    this.isCreatingUser = !this.isCreatingUser;  // Toggle form visibility
   }
 }

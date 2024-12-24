@@ -11,7 +11,6 @@ export class ClassScheduleComponent implements OnInit {
   classSchedules: ClassSchedule[] = [];
   isLoading = false;
   errorMessage = '';
-
   constructor(private classSchedulesService: ClassSchedulesService) {
         // Get the student object from localStorage
         const student = JSON.parse(localStorage.getItem('student') || '{}');

@@ -25,6 +25,8 @@ builder.Services.AddAuthentication(
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434a"))
     });
 builder.Services.AddDbContext<EduAssistHelpdeskContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("ConStr")));
+
+
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<IActivityRepo, ActivityRepo>();
 builder.Services.AddScoped<IPlacementRepo, PlacementRepo>();

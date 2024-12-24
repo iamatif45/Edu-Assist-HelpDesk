@@ -84,7 +84,7 @@
                 #title="ngModel"
                 required
                 minlength="5"
-                pattern="[A-Za-z, :-.]+"
+                pattern="^[A-Za-z ]+$"
 
                 [ngClass]="{'is-invalid': title.invalid && title.touched}"
               />
@@ -204,7 +204,7 @@
 
             <button
               type="submit"
-              class="btn btn-outline-info" style="color: white;"
+              class="btn btn-outline-primary" style="color: white;"
               [disabled]="activityForm.invalid"
             >
               {{ selectedActivity ? 'Update' : 'Create' }}

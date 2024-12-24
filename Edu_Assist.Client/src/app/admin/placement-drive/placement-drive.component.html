@@ -29,7 +29,7 @@
         #companyName="ngModel"
         required
         [ngClass]="{'is-invalid': companyName.invalid && companyName.touched}"
-        pattern="^[A-Za-z0-9:., -]{5,}$" />
+        pattern="^[A-Za-z:., -]{5,}$" />
       <div *ngIf="companyName.invalid && companyName.touched" class="text-danger">
         <div *ngIf="companyName.errors?.['required']">Company Name is required.</div>
         <div *ngIf="companyName.errors?.['pattern']">Company Name should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>
@@ -67,7 +67,7 @@
         #eligibilityCriteria="ngModel"
         required
         [ngClass]="{'is-invalid': eligibilityCriteria.invalid && eligibilityCriteria.touched}"
-        pattern="^[A-Za-z0-9:., -]{5,}$" />
+        pattern="^[A-Za-z0-9:., -%]{5,}$" />
       <div *ngIf="eligibilityCriteria.invalid && eligibilityCriteria.touched" class="text-danger">
         <div *ngIf="eligibilityCriteria.errors?.['required']">Eligibility Criteria is required.</div>
         <div *ngIf="eligibilityCriteria.errors?.['pattern']">Eligibility Criteria should only contain letters, numbers, or special characters `:`, `.`, `,`, and `-` and must have at least 5 characters.</div>

@@ -66,6 +66,7 @@ export class PlacementDriveCreateComponent implements OnInit {
         setTimeout(() => {
           this.successMessage = '';
         }, 3000);
+      
       },
       (error) => {
         // Show error message
